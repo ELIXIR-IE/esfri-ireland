@@ -1,6 +1,6 @@
 ---
-import fs from "node:fs";
 import yaml from "js-yaml";
+import rawYaml from "../data/esfris.yaml?raw";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 interface Entry {
@@ -18,8 +18,7 @@ interface Entry {
   email: string | null;
 }
 
-const raw = fs.readFileSync(new URL("../data/esfris.yaml", import.meta.url), "utf-8");
-const entries = yaml.load(raw) as Entry[];
+const entries = yaml.load(rawYaml) as Entry[];
 
 const base = import.meta.env.BASE_URL;
 
