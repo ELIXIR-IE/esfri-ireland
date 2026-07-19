@@ -37,6 +37,13 @@
   --color-badge-notmember-bg: #f1f3f2;
   --color-badge-notmember-text: #5b6b63;
 
+  /* ESFRI vs EIRO card/tag differentiation — EIRO gets a distinct slate
+     blue so it reads as clearly separate from ESFRI's green, without
+     introducing an unrelated/garish colour */
+  --color-esfri-tag-bg: var(--color-green-800);
+  --color-eiro-tag-bg: #3d5a73;
+  --color-eiro-card-bg: #eef3f6;
+
   /* Type scale */
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --fs-h1: clamp(2rem, 1.6rem + 1.6vw, 3.25rem);
@@ -82,6 +89,7 @@
     --color-badge-onboard-text: #f6b34d;
     --color-badge-notmember-bg: #1c2b25;
     --color-badge-notmember-text: #9fb6ab;
+    --color-eiro-card-bg: #17242c;
   }
 }
 

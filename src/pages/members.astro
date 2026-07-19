@@ -151,7 +151,7 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
               .filter((e) => e.tier === tier.key)
               .map((entry) => (
                 <div
-                  class="card org-card"
+                  class:list={["card", "org-card", entry.category === "eiro" && "org-card-eiro"]}
                   data-domain={entry.domain}
                   data-category={entry.category}
                   data-search={`${entry.name} ${entry.full_name ?? ""}`.toLowerCase()}
@@ -165,6 +165,9 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
                       aria-label={`Visit ${entry.name} website`}
                     ></a>
                   )}
+                  <span class={`org-category-tag org-category-tag-${entry.category}`}>
+                    {entry.category === "eiro" ? "EIRO" : "ESFRI"}
+                  </span>
                   <div class="org-card-head">
                     {entry.logo ? (
                       <img class="org-logo" src={`${base}${entry.logo}`} alt="" loading="lazy" />
@@ -202,7 +205,6 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
 
                   <div class="org-meta">
                     <span class="badge badge-domain">{entry.domain}</span>
-                    <span class={`badge badge-category-${entry.category}`}>{entry.category === "eiro" ? "EIRO" : "ESFRI"}</span>
                     {entry.roadmap_status && <span class="badge badge-outline">{entry.roadmap_status}</span>}
                     {entry.site_structure && <span class="badge badge-outline">{entry.site_structure}</span>}
                   </div>
@@ -414,6 +416,33 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
       display: flex;
       flex-direction: column;
       gap: var(--space-2);
+      padding-top: calc(var(--space-5) + var(--space-3));
+    }
+
+    .org-card-eiro {
+      background: var(--color-eiro-card-bg);
+    }
+
+    .org-category-tag {
+      position: absolute;
+      top: var(--space-3);
+      right: var(--space-3);
+      z-index: 2;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.2em 0.6em;
+      border-radius: 999px;
+      color: #fff;
+    }
+
+    .org-category-tag-esfri {
+      background: var(--color-esfri-tag-bg);
+    }
+
+    .org-category-tag-eiro {
+      background: var(--color-eiro-tag-bg);
     }
 
     .org-card-link {
@@ -529,20 +558,6 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
       border: 1px solid var(--color-border);
       font-weight: 600;
       text-transform: none;
-    }
-
-    .badge-category-esfri {
-      background: var(--color-green-800);
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 0.7rem;
-    }
-
-    .badge-category-eiro {
-      background: var(--color-gray-700);
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 0.7rem;
     }
 
     .badge-outline {

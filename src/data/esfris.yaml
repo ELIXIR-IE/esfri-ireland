@@ -478,7 +478,7 @@
   roadmap_status: Project  # Project | Landmark, from the 2021 ESFRI roadmap (dated)
   site_structure: Distributed  # Distributed | Single-sited, from the 2021 ESFRI roadmap (dated)
   website: "https://www.ucc.ie/en/susferm/"
-  logo: img/logos/eu-ibisba.svg
+  logo: img/logos/eu-ibisba.png
   email: null
 
 - id: eu-openscreen-eric
