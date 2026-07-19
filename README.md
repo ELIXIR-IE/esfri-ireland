@@ -2,12 +2,14 @@
 
 [![Deploy site to GitHub Pages](https://github.com/ELIXIR-IE/esfri-ireland/actions/workflows/deploy.yml/badge.svg)](https://github.com/ELIXIR-IE/esfri-ireland/actions/workflows/deploy.yml)
 
-### 🌐 [ienn.ie](https://ienn.ie)
+### 🌐 [elixir-ie.github.io/esfri-ireland](https://elixir-ie.github.io/esfri-ireland/)
+
+*(Temporary deployment URL until the `ienn.ie` domain registration is fully resolved and attached)*
 
 This repository hosts the website for the **Irish ESFRI Node Network (IENN)**.
 
 The site is built with [Astro](https://astro.build) and deployed to GitHub
-Pages at [ienn.ie](https://ienn.ie) via
+Pages at [https://elixir-ie.github.io/esfri-ireland/](https://elixir-ie.github.io/esfri-ireland/) via
 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
 ## Structure
@@ -70,8 +72,8 @@ This starts a local dev server at `http://localhost:4321/`.
 ## Deployment
 
 Automatic via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
-on every push to `main`. GitHub Pages serves the built site at the custom
-domain `ienn.ie` (see the `public/CNAME` file).
+on every push to `main`. GitHub Pages serves the built site at `https://elixir-ie.github.io/esfri-ireland/`.
+(Once `ienn.ie` is ready, it will serve there using a custom domain and `public/CNAME`.)
 
 ## Contributing
 
