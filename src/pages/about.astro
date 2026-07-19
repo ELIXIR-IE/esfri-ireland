@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { ICONS } from "../lib/icons";
+import { ICONS, ABOUT_ILLUSTRATION } from "../lib/icons";
 
 const whyList = [
   { icon: ICONS.link, text: "Act as an open, cross-domain forum connecting Irish researchers to a gateway to Europe." },
@@ -36,22 +36,25 @@ const stakeholders = [
 
 <BaseLayout title="About" description="What IENN is, why it exists, and who it's working with.">
   <section class="section page-header-section">
-    <div class="container">
-      <p class="eyebrow">About</p>
-      <h1>About IENN</h1>
-      <p class="section-intro" style="margin-left:0;">
-        <strong>IENN</strong> — the <strong>Irish ESFRI Node Network</strong> — is a
-        grassroots, cross-domain forum for Ireland's national nodes within the
-        European Strategy Forum on Research Infrastructures (ESFRI).
-        It has <strong>no formal or official connection to the European ESFRI forum</strong>.
-        It began as an open initiative formed by three of Ireland's existing
-        ESFRI nodes, <strong>DARIAH-Ireland</strong>, <strong>ELIXIR-Ireland</strong>,
-        and <strong>ISSDA</strong>,
-        to bring the country's ESFRI-facing communities into a single,
-        coordinated conversation. While it is a grassroots effort, we hope to
-        actively engage with the government departments responsible for and engaged
-        with ESFRIs (such as DFHERIS) to support Ireland's research infrastructure.
-      </p>
+    <div class="container hero-row">
+      <div class="hero-text">
+        <p class="eyebrow">About</p>
+        <h1>About IENN</h1>
+        <p class="section-intro" style="margin-left:0;">
+          <strong>IENN</strong> — the <strong>Irish ESFRI Node Network</strong> — is a
+          grassroots, cross-domain forum for Ireland's national nodes within the
+          European Strategy Forum on Research Infrastructures (ESFRI).
+          It has <strong>no formal or official connection to the European ESFRI forum</strong>.
+          It began as an open initiative formed by three of Ireland's existing
+          ESFRI nodes, <strong>DARIAH-Ireland</strong>, <strong>ELIXIR-Ireland</strong>,
+          and <strong>ISSDA</strong>,
+          to bring the country's ESFRI-facing communities into a single,
+          coordinated conversation. While it is a grassroots effort, we hope to
+          actively engage with the government departments responsible for and engaged
+          with ESFRIs (such as DFHERIS) to support Ireland's research infrastructure.
+        </p>
+      </div>
+      <div class="hero-illustration" aria-hidden="true" set:html={ABOUT_ILLUSTRATION} />
     </div>
   </section>
 

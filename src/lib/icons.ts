@@ -67,6 +67,18 @@ export const NETWORK_ILLUSTRATION = `<svg viewBox="0 0 320 280" xmlns="http://ww
   <circle cx="230" cy="160" r="16" fill="var(--color-accent)" />
 </svg>`;
 
+// About hero — three overlapping circles (Venn-style), echoing three
+// founding nodes coming together into one coordinated forum. Distinct
+// from Home's node-chain and People's hub-and-spoke composition.
+export const ABOUT_ILLUSTRATION = `<svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" role="presentation">
+  <circle cx="60" cy="55" r="42" fill="var(--color-accent)" opacity="0.08" />
+  <circle cx="265" cy="215" r="48" fill="var(--color-green-500)" opacity="0.10" />
+  <circle cx="140" cy="112" r="55" fill="var(--color-green-500)" opacity="0.14" stroke="var(--color-green-700)" stroke-width="2" />
+  <circle cx="200" cy="112" r="55" fill="var(--color-green-500)" opacity="0.14" stroke="var(--color-green-700)" stroke-width="2" />
+  <circle cx="170" cy="166" r="55" fill="var(--color-green-500)" opacity="0.14" stroke="var(--color-green-700)" stroke-width="2" />
+  <circle cx="170" cy="130" r="11" fill="var(--color-accent)" />
+</svg>`;
+
 // Publications hero — a stack of report/paper shapes with a "verified"
 // checkmark badge.
 export const DOCUMENT_ILLUSTRATION = `<svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" role="presentation">
