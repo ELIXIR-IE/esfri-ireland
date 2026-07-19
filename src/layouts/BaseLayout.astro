@@ -12,9 +12,10 @@ const nav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/members", label: "Members" },
+  { href: "/people", label: "People" },
   { href: "/mailing-list", label: "Mailing List" },
-  { href: "/news-events", label: "News & Events" },
   { href: "/publications", label: "Publications" },
+  { href: "/news-events", label: "News & Events" },
 ];
 
 const base = import.meta.env.BASE_URL;
@@ -158,7 +159,8 @@ function isActive(href: string) {
 
       @media (min-width: 1080px) {
         .primary-nav {
-          flex: none;
+          justify-content: flex-start;
+          margin-left: var(--space-6);
         }
       }
 
