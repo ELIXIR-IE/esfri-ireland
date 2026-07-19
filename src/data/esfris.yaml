@@ -56,7 +56,7 @@
   name: BBMRI-ERIC
   full_name: Biobanking and Biomolecular Resources Research Infrastructure
   description: A pan-European RI of biobanks and biomolecular resources.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Roadmap for membership
   tier: to_be_onboarded
@@ -167,7 +167,7 @@
   name: DiSSCo
   full_name: Distributed System of Scientific Collections
   description: Aims to digitally unify all European natural science assets under a single, distributed infrastructure.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Not a member
   tier: not_member
@@ -182,7 +182,7 @@
   name: EATRIS-ERIC
   full_name: European Infrastructure for Translational Medicine
   description: Supports the translation of scientific discoveries into new health products.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Not a member but some project links
   tier: to_be_onboarded
@@ -212,7 +212,7 @@
   name: ECRIN-ERIC
   full_name: European Clinical Research Infrastructure Network
   description: Supports multinational clinical trials in Europe.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Member (via HRB-NCTO)
   tier: to_be_onboarded
@@ -257,7 +257,7 @@
   name: EISCAT_3D
   full_name: Next generation European Incoherent Scatter radar system
   description: Next-generation radar to study the atmosphere and near-Earth space environment in the Fenno-Scandinavian Arctic.
-  domain: Environment / Physical Sciences
+  domain: Environment
   eosc_cluster: ENVRI-FAIR
   ireland_status: Not a member
   tier: not_member
@@ -287,7 +287,7 @@
   name: ELIXIR
   full_name: A distributed infrastructure for life-science information
   description: A distributed infrastructure for life-science data, supporting bioinformatics services across Europe.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Member (via ELIXIR-Ireland)
   tier: engaged
@@ -335,7 +335,7 @@
   name: EMBRC-ERIC
   full_name: European Marine Biological Resource Centre
   description: Provides access to marine ecosystems, organisms, and their data.
-  domain: Environment / Biological Sciences
+  domain: Environment
   eosc_cluster: ENVRI-FAIR
   ireland_status: Not a member
   tier: not_member
@@ -365,7 +365,7 @@
   name: EMPHASIS
   full_name: European Infrastructure for Multi-scale Plant Phenomics and Simulation
   description: European RI for plant phenotyping, to understand plant growth and performance in different environments.
-  domain: Health & Food / Biological Sciences
+  domain: Health & Food
   eosc_cluster: EOSC-Life
   ireland_status: Not a member
   tier: not_member
@@ -410,7 +410,7 @@
   name: ERINHA
   full_name: European Research Infrastructure on Highly Pathogenic Agents
   description: Studies highly pathogenic agents in humans.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Not a member
   tier: not_member
@@ -425,7 +425,7 @@
   name: ESS
   full_name: European Social Survey
   description: A cross-national survey collecting data on attitudes, beliefs and behaviour patterns in Europe.
-  domain: Social & Cultural Innovation / Health
+  domain: Social & Cultural Innovation
   eosc_cluster: SSHOC
   ireland_status: Member
   tier: to_be_onboarded
@@ -470,7 +470,7 @@
   name: EU-IBISBA
   full_name: European Industrial Biotechnology Innovation and Synthetic Biology Accelerator
   description: A distributed RI for the development of industrial biotechnology processes.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Member (via UCC)
   tier: to_be_onboarded
@@ -485,7 +485,7 @@
   name: EU-OPENSCREEN ERIC
   full_name: European Infrastructure of Open Screening Platforms for Chemical Biology
   description: A research infrastructure of screening platforms for chemical biology.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Not a member
   tier: not_member
@@ -575,7 +575,7 @@
   name: Euro-BioImaging ERIC
   full_name: European Research Infrastructure for Imaging Technologies in Biological and Biomedical Sciences
   description: Provides open access to a broad range of biological and medical imaging technologies.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Not a member
   tier: not_member
@@ -710,7 +710,7 @@
   name: Instruct-ERIC
   full_name: Integrated Structural Biology Infrastructure
   description: Provides access to advanced technology and expertise for structural biology research.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Not a member
   tier: not_member
@@ -725,7 +725,7 @@
   name: ISBE
   full_name: Infrastructure for Systems Biology Europe
   description: Provides infrastructure and support for systems biology research.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Member
   tier: to_be_onboarded
@@ -770,7 +770,7 @@
   name: LifeWatch ERIC
   full_name: e-Infrastructure for Biodiversity and Ecosystem Research
   description: An e-Infrastructure for biodiversity and ecosystem research.
-  domain: Environment / Biological Sciences
+  domain: Environment
   eosc_cluster: ENVRI-FAIR
   ireland_status: Not a member
   tier: not_member
@@ -815,7 +815,7 @@
   name: MIRRI-ERIC
   full_name: Microbial Resource Research Infrastructure
   description: A distributed RI for preservation, study and provision of microbial resources.
-  domain: Biological & Medical Sciences
+  domain: Life Sciences
   eosc_cluster: EOSC-Life
   ireland_status: Not a member
   tier: not_member
@@ -875,7 +875,7 @@
   name: SHARE-ERIC
   full_name: Survey of Health, Ageing and Retirement in Europe
   description: A multidisciplinary and cross-national panel database on health, socio-economic status and social and family networks.
-  domain: Social & Cultural Innovation / Health
+  domain: Social & Cultural Innovation
   eosc_cluster: SSHOC
   ireland_status: Not a member
   tier: not_member
