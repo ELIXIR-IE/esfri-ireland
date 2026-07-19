@@ -13,6 +13,8 @@ interface Entry {
   ireland_status: string;
   tier: "engaged" | "to_be_onboarded" | "not_member";
   category: "esfri" | "eiro";
+  roadmap_status: "Project" | "Landmark" | null;
+  site_structure: "Distributed" | "Single-sited" | null;
   website: string | null;
   logo: string | null;
   email: string | null;
@@ -26,7 +28,7 @@ function initials(name: string) {
   return name.replace(/[^A-Za-z0-9]/g, "").slice(0, 2).toUpperCase();
 }
 
-const domains = [...new Set(entries.map((e) => e.domain))].sort();
+const areas = [...new Set(entries.map((e) => e.domain))].sort();
 
 const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
   {
@@ -54,20 +56,72 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
       <h1>ESFRI &amp; EIRO Registry</h1>
       <p class="section-intro" style="margin-left:0;">
         Every ESFRI Research Infrastructure and EIRO, classified by Ireland's
-        current engagement with the IENN grassroots forum. Filter by
-        thematic cluster or search by name below.
+        current engagement with the IENN grassroots forum. Filter by type,
+        thematic area, or search by name below.
       </p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
+      <div class="card legend-card">
+        <h2 class="legend-heading">How to read this registry</h2>
+        <div class="grid grid-2 legend-grid">
+          <div>
+            <h3 class="legend-subheading">Engagement tiers</h3>
+            <ul class="legend-list">
+              <li><span class="badge badge-tier-engaged">Engaged</span> — founding/active IENN members.</li>
+              <li><span class="badge badge-tier-to-be-onboarded">To Be Onboarded</span> — Ireland has ESFRI/EIRO membership or links, but isn't in IENN yet.</li>
+              <li><span class="badge badge-tier-not-member">Not a Member</span> — Ireland has no current membership.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="legend-subheading">ESFRI vs EIRO</h3>
+            <p class="legend-text">
+              <strong>ESFRI</strong> Research Infrastructures are on the European
+              Strategy Forum on Research Infrastructures roadmap. <strong>EIROs</strong>
+              (European Intergovernmental Research Organisations, e.g. CERN, EMBL, ESA)
+              are related but separate treaty-based organisations, included here for
+              their European significance.
+            </p>
+          </div>
+          <div>
+            <h3 class="legend-subheading">Project vs Landmark</h3>
+            <p class="legend-text">
+              From the <a href="https://roadmap2021.esfri.eu/projects-and-landmarks/view-the-table/" target="_blank" rel="noopener">ESFRI Roadmap 2021</a>:
+              <strong>Landmark</strong> infrastructures are fully implemented and
+              operating; <strong>Project</strong> infrastructures are still being
+              developed. <em>This classification is from 2021 and may be outdated
+              for some entries — shown as indicative, not authoritative.</em>
+            </p>
+          </div>
+          <div>
+            <h3 class="legend-subheading">Distributed vs Single-sited</h3>
+            <p class="legend-text">
+              <strong>Distributed</strong> infrastructures operate across multiple
+              national nodes/outstations — this is the structure that matters most
+              for Ireland, since it's how an Irish outstation becomes possible at all.
+              <strong>Single-sited</strong> infrastructures have one physical location
+              elsewhere in Europe.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div class="registry-filters card">
         <div class="filter-field">
-          <label for="domain-filter">Thematic cluster</label>
+          <label for="category-filter">Type</label>
+          <select id="category-filter">
+            <option value="">ESFRI &amp; EIRO</option>
+            <option value="esfri">ESFRI only</option>
+            <option value="eiro">EIRO only</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="domain-filter">Thematic area</label>
           <select id="domain-filter">
-            <option value="">All clusters</option>
-            {domains.map((d) => <option value={d}>{d}</option>)}
+            <option value="">All areas</option>
+            {areas.map((d) => <option value={d}>{d}</option>)}
           </select>
         </div>
         <div class="filter-field">
@@ -79,7 +133,7 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
       <p id="result-count" class="result-count"></p>
 
       {tiers.map((tier) => (
-        <div class="tier-section" data-tier-section={tier.key}>
+        <div class={`tier-section tier-section-${tier.key}`} data-tier-section={tier.key}>
           <h2 class="tier-heading">
             {tier.label}
             <span class={`badge badge-tier-${tier.key.replace(/_/g, "-")}`}>{tier.label}</span>
@@ -93,6 +147,7 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
                 <div
                   class="card org-card"
                   data-domain={entry.domain}
+                  data-category={entry.category}
                   data-search={`${entry.name} ${entry.full_name ?? ""}`.toLowerCase()}
                 >
                   {entry.website && (
@@ -121,6 +176,9 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
                   <p class="org-desc">{entry.description}</p>
                   <div class="org-meta">
                     <span class="badge badge-domain">{entry.domain}</span>
+                    <span class="badge badge-category">{entry.category === "eiro" ? "EIRO" : "ESFRI"}</span>
+                    {entry.roadmap_status && <span class="badge badge-outline">{entry.roadmap_status}</span>}
+                    {entry.site_structure && <span class="badge badge-outline">{entry.site_structure}</span>}
                   </div>
                 </div>
               ))}
@@ -131,6 +189,7 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
   </section>
 
   <script>
+    const categoryFilter = document.querySelector<HTMLSelectElement>("#category-filter");
     const domainFilter = document.querySelector<HTMLSelectElement>("#domain-filter");
     const searchFilter = document.querySelector<HTMLInputElement>("#search-filter");
     const clearBtn = document.querySelector<HTMLButtonElement>("#filter-clear");
@@ -139,14 +198,16 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
     const tierSections = Array.from(document.querySelectorAll<HTMLDivElement>("[data-tier-section]"));
 
     function applyFilters() {
+      const category = categoryFilter?.value ?? "";
       const domain = domainFilter?.value ?? "";
       const search = (searchFilter?.value ?? "").trim().toLowerCase();
       let visible = 0;
 
       cards.forEach((card) => {
+        const matchesCategory = !category || card.dataset.category === category;
         const matchesDomain = !domain || card.dataset.domain === domain;
         const matchesSearch = !search || (card.dataset.search ?? "").includes(search);
-        const show = matchesDomain && matchesSearch;
+        const show = matchesCategory && matchesDomain && matchesSearch;
         card.style.display = show ? "" : "none";
         if (show) visible++;
       });
@@ -163,9 +224,11 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
       }
     }
 
+    categoryFilter?.addEventListener("change", applyFilters);
     domainFilter?.addEventListener("change", applyFilters);
     searchFilter?.addEventListener("input", applyFilters);
     clearBtn?.addEventListener("click", () => {
+      if (categoryFilter) categoryFilter.value = "";
       if (domainFilter) domainFilter.value = "";
       if (searchFilter) searchFilter.value = "";
       applyFilters();
@@ -175,6 +238,39 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
   </script>
 
   <style>
+    .legend-card {
+      margin-bottom: var(--space-5);
+      background: var(--color-bg-subtle);
+    }
+
+    .legend-heading {
+      margin-bottom: var(--space-4);
+    }
+
+    .legend-grid {
+      gap: var(--space-5);
+    }
+
+    .legend-subheading {
+      font-size: var(--fs-h4);
+      margin-bottom: var(--space-2);
+    }
+
+    .legend-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: var(--fs-small);
+    }
+
+    .legend-text {
+      font-size: var(--fs-small);
+      margin-bottom: 0;
+    }
+
     .registry-filters {
       display: flex;
       flex-wrap: wrap;
@@ -226,10 +322,24 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
 
     .tier-section {
       margin-top: var(--space-7);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
     }
 
     .tier-section:first-of-type {
       margin-top: var(--space-4);
+    }
+
+    .tier-section-engaged {
+      background: var(--color-badge-engaged-bg);
+    }
+
+    .tier-section-to_be_onboarded {
+      background: var(--color-badge-onboard-bg);
+    }
+
+    .tier-section-not_member {
+      background: var(--color-badge-notmember-bg);
     }
 
     .tier-heading {
@@ -321,6 +431,9 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
     .org-meta {
       margin-top: auto;
       padding-top: var(--space-2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
     }
 
     .badge {
@@ -335,7 +448,22 @@ const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
     }
 
     .badge-domain {
-      background: var(--color-bg-subtle);
+      background: var(--color-surface);
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      font-weight: 600;
+      text-transform: none;
+    }
+
+    .badge-category {
+      background: var(--color-green-800);
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+
+    .badge-outline {
+      background: transparent;
       color: var(--color-text-muted);
       border: 1px solid var(--color-border);
       font-weight: 600;
