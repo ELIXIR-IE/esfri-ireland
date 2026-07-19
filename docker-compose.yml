@@ -1,0 +1,26 @@
+# Local live-reloading dev server — no local Node install required.
+#
+#   docker compose up
+#
+# Then open http://localhost:4321/ — edits to files under src/ or public/
+# are reflected live. Ctrl+C or `docker compose down` to stop.
+services:
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4321:4321"
+    volumes:
+      - .:/app
+      - site_node_modules:/app/node_modules
+    working_dir: /app
+    # Each container start gets a fresh PID namespace, so a stale
+    # .astro/dev.json (left on the bind-mounted host dir by a container that
+    # didn't shut down cleanly) can record a PID that the new process tree
+    # reuses for itself — making `astro dev --force` kill its own server on
+    # startup. Deleting the lock before launching avoids that entirely.
+    command: sh -c "rm -f .astro/dev.json && npm run dev -- --host 0.0.0.0"
+
+volumes:
+  site_node_modules:

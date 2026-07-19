@@ -1,0 +1,873 @@
+# ESFRI Research Infrastructures + EIROs, and Ireland's engagement with IENN.
+#
+# Source: "Mapping of ESFRI Research Infrastructures and Irish Membership
+# Status" (Gavin Farrell, University of Limerick & ELIXIR-Ireland, v1,
+# 3 Aug 2025), originally an appendix to the EOSC Ireland (v2) paper.
+#
+# tier:
+#   engaged          - founding/active IENN grassroots forum member
+#   to_be_onboarded  - Ireland has ESFRI membership/links, not yet in IENN
+#   not_member       - Ireland is not a member of this ESFRI RI/EIRO
+#
+# website/logo/email are left null where not yet verified — filled in as a
+# follow-up research pass, not guessed.
+
+- id: actris
+  name: ACTRIS
+  full_name: Aerosols, Clouds, and Trace Gases Research Infrastructure
+  description: Produces data on short-lived atmospheric constituents and their processes.
+  domain: Environment
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.actris.eu/"
+  logo: img/logos/actris.svg
+  email: null
+
+- id: anaee
+  name: AnaEE
+  full_name: Analysis and Experimentation on Ecosystems
+  description: An RI for experimental research on terrestrial and aquatic ecosystems.
+  domain: Environment
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.anaee.eu/"
+  logo: img/logos/anaee.png
+  email: null
+
+- id: bbmri-eric
+  name: BBMRI-ERIC
+  full_name: Biobanking and Biomolecular Resources Research Infrastructure
+  description: A pan-European RI of biobanks and biomolecular resources.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Roadmap for membership
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.bbmri-eric.eu/"
+  logo: img/logos/bbmri-eric.png
+  email: null
+
+- id: ceric-eric
+  name: CERIC-ERIC
+  full_name: Central European Research Infrastructure Consortium
+  description: Provides open access to advanced analytical instruments for materials and biomaterials science.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.ceric-eric.eu/"
+  logo: img/logos/ceric-eric.svg
+  email: null
+
+- id: cessda-eric
+  name: CESSDA-ERIC
+  full_name: Consortium of European Social Science Data Archives
+  description: Provides a platform for social science data archives across Europe.
+  domain: Social & Cultural Innovation
+  eosc_cluster: SSHOC
+  ireland_status: Member (via ISSDA)
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.ucd.ie/issda/"
+  logo: img/logos/cessda-eric.png
+  email: null
+
+- id: clarin-eric
+  name: CLARIN-ERIC
+  full_name: Common Language Resources and Technology Infrastructure
+  description: Provides access to digital language data and tools for research in SSH.
+  domain: Social & Cultural Innovation
+  eosc_cluster: SSHOC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.clarin.eu/"
+  logo: null
+  email: null
+
+- id: ctao
+  name: CTAO
+  full_name: Cherenkov Telescope Array
+  description: The next-generation ground-based observatory for gamma-ray astronomy.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: ESCAPE
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.ctao.org/"
+  logo: img/logos/ctao.svg
+  email: null
+
+- id: danubius-ri
+  name: DANUBIUS-RI
+  full_name: null
+  description: A distributed RI for advanced studies on river-sea systems, from source to sea.
+  domain: Environment
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://danubius-ri.eu/"
+  logo: null
+  email: null
+
+- id: dariah-eric
+  name: DARIAH-ERIC
+  full_name: Digital Research Infrastructure for the Arts and Humanities
+  description: Supports digitally-enabled research in the arts and humanities.
+  domain: Social & Cultural Innovation
+  eosc_cluster: SSHOC
+  ireland_status: Member (via DARIAH-IE)
+  tier: engaged
+  category: esfri
+  website: "https://dariah.ie/"
+  logo: null
+  email: null
+
+- id: dissco
+  name: DiSSCo
+  full_name: Distributed System of Scientific Collections
+  description: Aims to digitally unify all European natural science assets under a single, distributed infrastructure.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.dissco.eu/"
+  logo: img/logos/dissco.svg
+  email: null
+
+- id: eatris-eric
+  name: EATRIS-ERIC
+  full_name: European Infrastructure for Translational Medicine
+  description: Supports the translation of scientific discoveries into new health products.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member but some project links
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://eatris.eu/"
+  logo: img/logos/eatris-eric.svg
+  email: null
+
+- id: eccsel-eric
+  name: ECCSEL-ERIC
+  full_name: European Carbon Dioxide Capture and Storage Laboratory
+  description: An RI of laboratories for research on CO2 capture, transport, and storage.
+  domain: Energy
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://eccsel.eu/"
+  logo: img/logos/eccsel-eric.svg
+  email: null
+
+- id: ecrin-eric
+  name: ECRIN-ERIC
+  full_name: European Clinical Research Infrastructure Network
+  description: Supports multinational clinical trials in Europe.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Member (via HRB-NCTO)
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://ecrin.org/"
+  logo: img/logos/ecrin-eric.png
+  email: null
+
+- id: ehri
+  name: EHRI
+  full_name: European Holocaust Research Infrastructure
+  description: Provides access to dispersed archives and data related to the Holocaust.
+  domain: Social & Cultural Innovation
+  eosc_cluster: SSHOC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.ehri-project.eu/"
+  logo: img/logos/ehri.svg
+  email: null
+
+- id: eirene-ri
+  name: EIRENE RI
+  full_name: null
+  description: An RI for assessing the human exposome, linking environmental exposures to health.
+  domain: Health & Food
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://eirene.eu/"
+  logo: null
+  email: null
+
+- id: eiscat-3d
+  name: EISCAT_3D
+  full_name: null
+  description: Next-generation radar to study the atmosphere and near-Earth space environment in the Fenno-Scandinavian Arctic.
+  domain: Environment / Physical Sciences
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://eiscat.se/eiscat_3d/"
+  logo: img/logos/eiscat-3d.png
+  email: null
+
+- id: eli-eric
+  name: ELI-ERIC
+  full_name: Extreme Light Infrastructure
+  description: The world's most advanced laser-based research infrastructure.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: ESCAPE
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.eli-laser.eu/"
+  logo: img/logos/eli-eric.jpg
+  email: null
+
+- id: elixir
+  name: ELIXIR
+  full_name: null
+  description: A distributed infrastructure for life-science data, supporting bioinformatics services across Europe.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Member (via ELIXIR-Ireland)
+  tier: engaged
+  category: esfri
+  website: "https://elixir-ireland.ie/"
+  logo: img/logos/elixir.png
+  email: null
+
+- id: elt
+  name: ELT
+  full_name: Extremely Large Telescope
+  description: The world's largest optical/infrared telescope, currently under construction in Chile.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: ESCAPE
+  ireland_status: Member (through ESO)
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://elt.eso.org/"
+  logo: img/logos/elt.png
+  email: null
+
+- id: elter-ri
+  name: eLTER-RI
+  full_name: Long-Term Ecosystem Research in Europe
+  description: A network of sites for studying ecosystems and their response to environmental change.
+  domain: Environment
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://elter-ri.eu/"
+  logo: null
+  email: null
+
+- id: embrc-eric
+  name: EMBRC-ERIC
+  full_name: European Marine Biological Resource Centre
+  description: Provides access to marine ecosystems, organisms, and their data.
+  domain: Environment / Biological Sciences
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.embrc.eu/"
+  logo: img/logos/embrc-eric.svg
+  email: null
+
+- id: emfl
+  name: EMFL
+  full_name: European Magnetic Field Laboratory
+  description: An RI for research in high magnetic fields.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://emfl.eu/"
+  logo: img/logos/emfl.png
+  email: null
+
+- id: emphasis
+  name: EMPHASIS
+  full_name: null
+  description: European RI for plant phenotyping, to understand plant growth and performance in different environments.
+  domain: Health & Food / Biological Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://emphasis.plant-phenotyping.eu/"
+  logo: img/logos/emphasis.svg
+  email: null
+
+- id: emso-eric
+  name: EMSO-ERIC
+  full_name: European Multidisciplinary Seafloor and water-column Observatory
+  description: A network of fixed-point observatories for long-term monitoring of environmental processes.
+  domain: Environment
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Member (via Marine Institute)
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.marine.ie/"
+  logo: img/logos/emso-eric.gif
+  email: null
+
+- id: epos-eric
+  name: EPOS-ERIC
+  full_name: European Plate Observing System
+  description: An RI for data and services to advance our understanding of the solid Earth.
+  domain: Environment
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Included in the integration plan
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.epos-eu.org/"
+  logo: img/logos/epos-eric.svg
+  email: null
+
+- id: erinha
+  name: ERINHA
+  full_name: European Research Infrastructure on Highly Pathogenic Agents
+  description: Studies highly pathogenic agents in humans.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://erinha.eu/"
+  logo: img/logos/erinha.png
+  email: null
+
+- id: ess
+  name: ESS
+  full_name: European Social Survey
+  description: A cross-national survey collecting data on attitudes, beliefs and behaviour patterns in Europe.
+  domain: Social & Cultural Innovation / Health
+  eosc_cluster: SSHOC
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.europeansocialsurvey.org/"
+  logo: null
+  email: null
+
+- id: esrf-ebs
+  name: ESRF-EBS
+  full_name: European Synchrotron Radiation Facility
+  description: A powerful synchrotron light source for a wide range of scientific research.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.esrf.fr/"
+  logo: null
+  email: null
+
+- id: est
+  name: EST
+  full_name: European Solar Telescope
+  description: A next-generation large-aperture solar telescope to study the Sun with unprecedented detail.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: ESCAPE
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://est-east.eu/"
+  logo: img/logos/est.png
+  email: null
+
+- id: eu-ibisba
+  name: EU-IBISBA
+  full_name: Industrial Biotechnology and Synthetic Biology
+  description: A distributed RI for the development of industrial biotechnology processes.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Member (via UCC)
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.ucc.ie/en/susferm/"
+  logo: img/logos/eu-ibisba.svg
+  email: null
+
+- id: eu-openscreen-eric
+  name: EU-OPENSCREEN ERIC
+  full_name: null
+  description: A research infrastructure of screening platforms for chemical biology.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.eu-openscreen.eu/"
+  logo: img/logos/eu-openscreen-eric.png
+  email: null
+
+- id: eupraxia
+  name: EuPRAXIA
+  full_name: null
+  description: A distributed, next-generation plasma accelerator facility for science and applications.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: ESCAPE
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.eupraxia-facility.org/"
+  logo: null
+  email: null
+
+- id: european-spallation-source
+  name: European Spallation Source ERIC
+  full_name: null
+  description: A multi-disciplinary research facility based on the world's most powerful neutron source.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://ess.eu/"
+  logo: img/logos/european-spallation-source.svg
+  email: null
+
+- id: european-xfel
+  name: European XFEL
+  full_name: European X-ray Free-Electron Laser Facility
+  description: A research facility that generates extremely intense X-ray flashes for scientific experiments.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.xfel.eu/"
+  logo: img/logos/european-xfel.png
+  email: null
+
+- id: eu-solaris
+  name: EU-SOLARIS
+  full_name: null
+  description: An RI for research and development in concentrated solar power technology.
+  domain: Energy
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://eu-solaris.eu/"
+  logo: img/logos/eu-solaris.png
+  email: null
+
+- id: euro-argo-eric
+  name: EURO-ARGO ERIC
+  full_name: null
+  description: A global network of profiling floats that provides real-time data on ocean temperature and salinity.
+  domain: Environment
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.euro-argo.eu/"
+  logo: img/logos/euro-argo-eric.png
+  email: null
+
+- id: euro-bioimaging-eric
+  name: Euro-BioImaging ERIC
+  full_name: null
+  description: Provides open access to a broad range of biological and medical imaging technologies.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.eurobioimaging.eu/"
+  logo: img/logos/euro-bioimaging-eric.svg
+  email: null
+
+- id: fair
+  name: FAIR
+  full_name: Facility for Antiproton and Ion Research
+  description: A future international accelerator facility for research with antiprotons and ions.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: ESCAPE
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://fair-center.eu/"
+  logo: img/logos/fair.jpg
+  email: null
+
+- id: fcc
+  name: FCC
+  full_name: Future Circular Collider
+  description: A post-LHC high-energy physics project to build a next-generation particle collider.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: ESCAPE
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://fcc.web.cern.ch/"
+  logo: null
+  email: null
+
+- id: ggp
+  name: GGP
+  full_name: Generations and Gender Programme
+  description: A social science RI for data on population and family dynamics.
+  domain: Social & Cultural Innovation
+  eosc_cluster: SSHOC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.ggp-i.org/"
+  logo: img/logos/ggp.svg
+  email: null
+
+- id: guide
+  name: GUIDE
+  full_name: Growing Up in Digital Europe
+  description: Europe's first comparative birth cohort survey, studying child well-being across Europe.
+  domain: Social & Cultural Innovation
+  eosc_cluster: SSHOC
+  ireland_status: Member, Co-coordinated by Ireland (UCD)
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.guidecohort.eu/"
+  logo: img/logos/guide.webp
+  email: null
+
+- id: hl-lhc
+  name: HL-LHC
+  full_name: High-Luminosity Large Hadron Collider
+  description: An upgrade to the LHC at CERN to increase its luminosity and data output.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: ESCAPE
+  ireland_status: Access through CERN membership
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://hilumilhc.web.cern.ch/"
+  logo: img/logos/hl-lhc.png
+  email: null
+
+- id: iagos
+  name: IAGOS
+  full_name: In-service Aircraft for a Global Observing System
+  description: Uses commercial aircraft to collect data on atmospheric composition.
+  domain: Environment
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.iagos.org/"
+  logo: img/logos/iagos.png
+  email: null
+
+- id: icos-eric
+  name: ICOS-ERIC
+  full_name: Integrated Carbon Observation System
+  description: A network of stations to measure greenhouse gas fluxes and concentrations.
+  domain: Environment
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Observer
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.icos-cp.eu/"
+  logo: img/logos/icos-eric.svg
+  email: null
+
+- id: ifmif-dones
+  name: IFMIF-DONES
+  full_name: International Fusion Materials Irradiation Facility
+  description: An RI to test, validate, and qualify materials for future fusion power plants.
+  domain: Energy
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://ifmif-dones.es/"
+  logo: img/logos/ifmif-dones.svg
+  email: null
+
+- id: instruct-eric
+  name: Instruct-ERIC
+  full_name: null
+  description: Provides access to advanced technology and expertise for structural biology research.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://instruct-eric.org/"
+  logo: img/logos/instruct-eric.png
+  email: null
+
+- id: isbe
+  name: ISBE
+  full_name: Infrastructure for Systems Biology Europe
+  description: Provides infrastructure and support for systems biology research.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://project.isbe.eu/"
+  logo: null
+  email: null
+
+- id: jhr
+  name: JHR
+  full_name: Jules Horowitz Reactor
+  description: A new material testing reactor for studying materials and fuels under irradiation.
+  domain: Energy
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://jhrreactor.com/en/home/"
+  logo: img/logos/jhr.png
+  email: null
+
+- id: km3net-2-0
+  name: KM3NeT 2.0
+  full_name: null
+  description: A large research infrastructure hosting the next generation neutrino telescopes in the Mediterranean Sea.
+  domain: Physical Sciences & Engineering
+  eosc_cluster: ESCAPE
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.km3net.org/"
+  logo: img/logos/km3net-2-0.png
+  email: null
+
+- id: lifewatch-eric
+  name: LifeWatch ERIC
+  full_name: null
+  description: An e-Infrastructure for biodiversity and ecosystem research.
+  domain: Environment / Biological Sciences
+  eosc_cluster: ENVRI-FAIR
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.lifewatch.eu/"
+  logo: img/logos/lifewatch-eric.svg
+  email: null
+
+- id: marinerg-i
+  name: MARINERG-i
+  full_name: null
+  description: An RI of offshore renewable energy testing facilities.
+  domain: Energy
+  eosc_cluster: PANOSC
+  ireland_status: Coordinated by Ireland (MaREI, UCC)
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.marinerg-i.eu/"
+  logo: img/logos/marinerg-i.svg
+  email: null
+
+- id: metrofood-ri
+  name: METROFOOD-RI
+  full_name: null
+  description: An RI to provide high-quality metrology services in food and nutrition.
+  domain: Health & Food
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.metrofood.eu/"
+  logo: img/logos/metrofood-ri.png
+  email: null
+
+- id: mirri-eric
+  name: MIRRI-ERIC
+  full_name: Microbial Resource Research Infrastructure
+  description: A distributed RI for preservation, study and provision of microbial resources.
+  domain: Biological & Medical Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.mirri-eric.eu/"
+  logo: img/logos/mirri-eric.svg
+  email: null
+
+- id: operas
+  name: OPERAS
+  full_name: null
+  description: A distributed RI for open scholarly communication in the social sciences and humanities.
+  domain: Social & Cultural Innovation
+  eosc_cluster: SSHOC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.operas-eu.org/"
+  logo: img/logos/operas.png
+  email: null
+
+- id: prace
+  name: PRACE
+  full_name: Partnership for Advanced Computing in Europe
+  description: Provides a world-class high-performance computing service for scientists and researchers.
+  domain: Data, Computing & Digital RIs
+  eosc_cluster: PANOSC
+  ireland_status: Member (via ICHEC)
+  tier: to_be_onboarded
+  category: esfri
+  website: "https://www.ichec.ie/"
+  logo: img/logos/prace.png
+  email: null
+
+- id: resilience
+  name: RESILIENCE
+  full_name: Research Infrastructure on Religious Studies and Theology
+  description: Supports all fields of religious studies through access to physical and digital resources.
+  domain: Social & Cultural Innovation
+  eosc_cluster: SSHOC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.resilience-ri.eu/"
+  logo: img/logos/resilience.png
+  email: null
+
+- id: share-eric
+  name: SHARE-ERIC
+  full_name: Survey of Health, Ageing and Retirement in Europe
+  description: A multidisciplinary and cross-national panel database on health, socio-economic status and social and family networks.
+  domain: Social & Cultural Innovation / Health
+  eosc_cluster: SSHOC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://share-eric.eu/"
+  logo: img/logos/share-eric.svg
+  email: null
+
+- id: slices
+  name: SLICES
+  full_name: null
+  description: A flexible and programmable instrument for research in digital sciences and computer networking.
+  domain: Data, Computing & Digital RIs
+  eosc_cluster: PANOSC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://www.slices-ri.eu/"
+  logo: img/logos/slices.png
+  email: null
+
+- id: sobigdata-plus-plus
+  name: SoBigData++
+  full_name: Social Mining & Big Data Ecosystem
+  description: A research infrastructure for data science and social mining.
+  domain: Data, Computing & Social Sciences
+  eosc_cluster: SSHOC
+  ireland_status: Not a member
+  tier: not_member
+  category: esfri
+  website: "https://sobigdata.eu/"
+  logo: img/logos/sobigdata-plus-plus.png
+  email: null
+
+# --- EIROs (Table 2) — related but not formally ESFRI ---
+
+- id: cern
+  name: CERN
+  full_name: European Organization for Nuclear Research
+  description: Operates the world's largest particle physics laboratory, probing the fundamental structure of the universe.
+  domain: Particle Physics
+  eosc_cluster: ESCAPE
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: eiro
+  website: "https://home.cern/"
+  logo: img/logos/cern.png
+  email: null
+
+- id: eurofusion
+  name: EUROfusion
+  full_name: European Consortium for the Development of Fusion Energy
+  description: Manages Europe's research roadmap to develop fusion energy as a clean and sustainable power source.
+  domain: Fusion Energy
+  eosc_cluster: ESCAPE
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: eiro
+  website: "https://euro-fusion.org/"
+  logo: img/logos/eurofusion.png
+  email: null
+
+- id: embl
+  name: EMBL
+  full_name: European Molecular Biology Laboratory
+  description: Conducts research in molecular biology and provides training and services to the scientific community.
+  domain: Life Sciences
+  eosc_cluster: EOSC-Life
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: eiro
+  website: "https://www.embl.org/"
+  logo: img/logos/embl.svg
+  email: null
+
+- id: esa
+  name: ESA
+  full_name: European Space Agency
+  description: Shapes the development of Europe's space capability and ensures that investment in space delivers benefits to citizens.
+  domain: Space Exploration
+  eosc_cluster: ESCAPE, ENVRI-FAIR
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: eiro
+  website: "https://www.esa.int/"
+  logo: img/logos/esa.svg
+  email: null
+
+- id: eso
+  name: ESO
+  full_name: European Southern Observatory
+  description: Designs, builds, and operates powerful ground-based astronomical telescopes for observing the universe.
+  domain: Astronomy
+  eosc_cluster: ESCAPE
+  ireland_status: Member
+  tier: to_be_onboarded
+  category: eiro
+  website: "https://www.eso.org/public/"
+  logo: img/logos/eso.png
+  email: null
+
+- id: esrf
+  name: ESRF
+  full_name: European Synchrotron Radiation Facility
+  description: Provides a world-leading source of synchrotron-generated X-rays for a wide range of scientific research.
+  domain: Materials & Life Sciences
+  eosc_cluster: PANOSC
+  ireland_status: Not a Member
+  tier: not_member
+  category: eiro
+  website: "https://www.esrf.fr/"
+  logo: null
+  email: null
+
+- id: ill
+  name: ILL
+  full_name: Institut Laue-Langevin
+  description: An international research centre at the leading edge of neutron science and technology.
+  domain: Neutron Science
+  eosc_cluster: PANOSC
+  ireland_status: Not a Member
+  tier: not_member
+  category: eiro
+  website: "https://www.ill.eu/en/"
+  logo: null
+  email: null

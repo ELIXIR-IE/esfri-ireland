@@ -1,0 +1,367 @@
+---
+import fs from "node:fs";
+import yaml from "js-yaml";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+interface Entry {
+  id: string;
+  name: string;
+  full_name: string | null;
+  description: string;
+  domain: string;
+  eosc_cluster: string;
+  ireland_status: string;
+  tier: "engaged" | "to_be_onboarded" | "not_member";
+  category: "esfri" | "eiro";
+  website: string | null;
+  logo: string | null;
+  email: string | null;
+}
+
+const raw = fs.readFileSync(new URL("../data/esfris.yaml", import.meta.url), "utf-8");
+const entries = yaml.load(raw) as Entry[];
+
+const base = import.meta.env.BASE_URL;
+
+function initials(name: string) {
+  return name.replace(/[^A-Za-z0-9]/g, "").slice(0, 2).toUpperCase();
+}
+
+const domains = [...new Set(entries.map((e) => e.domain))].sort();
+
+const tiers: { key: Entry["tier"]; label: string; intro: string }[] = [
+  {
+    key: "engaged",
+    label: "Engaged",
+    intro: "Founding and active members of the IENN forum.",
+  },
+  {
+    key: "to_be_onboarded",
+    label: "To Be Onboarded",
+    intro: "Ireland is a member/observer of this ESFRI or EIRO, but it isn't part of the IENN grassroots forum yet.",
+  },
+  {
+    key: "not_member",
+    label: "Not a Member",
+    intro: "Ireland is not currently a member of this ESFRI or EIRO.",
+  },
+];
+---
+
+<BaseLayout title="Members" description="ESFRI Research Infrastructures and EIROs, and Ireland's engagement with each, via the IENN grassroots forum.">
+  <section class="section page-header-section">
+    <div class="container">
+      <p class="eyebrow">Members</p>
+      <h1>ESFRI &amp; EIRO Registry</h1>
+      <p class="section-intro" style="margin-left:0;">
+        Every ESFRI Research Infrastructure and EIRO, classified by Ireland's
+        current engagement with the IENN grassroots forum. Filter by
+        thematic cluster or search by name below.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="registry-filters card">
+        <div class="filter-field">
+          <label for="domain-filter">Thematic cluster</label>
+          <select id="domain-filter">
+            <option value="">All clusters</option>
+            {domains.map((d) => <option value={d}>{d}</option>)}
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="search-filter">Search by name</label>
+          <input id="search-filter" type="text" placeholder="e.g. ELIXIR, DARIAH..." />
+        </div>
+        <button id="filter-clear" type="button" class="btn btn-outline filter-clear">Clear filters</button>
+      </div>
+      <p id="result-count" class="result-count"></p>
+
+      {tiers.map((tier) => (
+        <div class="tier-section" data-tier-section={tier.key}>
+          <h2 class="tier-heading">
+            {tier.label}
+            <span class={`badge badge-tier-${tier.key.replace(/_/g, "-")}`}>{tier.label}</span>
+          </h2>
+          <p class="tier-intro">{tier.intro}</p>
+
+          <div class="grid grid-3 members-grid">
+            {entries
+              .filter((e) => e.tier === tier.key)
+              .map((entry) => (
+                <div
+                  class="card org-card"
+                  data-domain={entry.domain}
+                  data-search={`${entry.name} ${entry.full_name ?? ""}`.toLowerCase()}
+                >
+                  {entry.website && (
+                    <a
+                      class="org-card-link"
+                      href={entry.website}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={`Visit ${entry.name} website`}
+                    ></a>
+                  )}
+                  <div class="org-card-head">
+                    {entry.logo ? (
+                      <img class="org-logo" src={`${base}${entry.logo}`} alt="" loading="lazy" />
+                    ) : (
+                      <div class="org-logo org-logo-fallback" aria-hidden="true">{initials(entry.name)}</div>
+                    )}
+                    <span
+                      class:list={["mail-dot", entry.email && "mail-dot-active"]}
+                      title={entry.email ? `Contact: ${entry.email}` : "No contact email listed yet"}
+                      aria-label={entry.email ? `Contact email available for ${entry.name}` : `No contact email listed yet for ${entry.name}`}
+                    ></span>
+                  </div>
+                  <h3 class="org-name">{entry.name}</h3>
+                  {entry.full_name && <p class="org-fullname">{entry.full_name}</p>}
+                  <p class="org-desc">{entry.description}</p>
+                  <div class="org-meta">
+                    <span class="badge badge-domain">{entry.domain}</span>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <script>
+    const domainFilter = document.querySelector<HTMLSelectElement>("#domain-filter");
+    const searchFilter = document.querySelector<HTMLInputElement>("#search-filter");
+    const clearBtn = document.querySelector<HTMLButtonElement>("#filter-clear");
+    const resultCount = document.querySelector<HTMLParagraphElement>("#result-count");
+    const cards = Array.from(document.querySelectorAll<HTMLDivElement>(".org-card"));
+    const tierSections = Array.from(document.querySelectorAll<HTMLDivElement>("[data-tier-section]"));
+
+    function applyFilters() {
+      const domain = domainFilter?.value ?? "";
+      const search = (searchFilter?.value ?? "").trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const matchesDomain = !domain || card.dataset.domain === domain;
+        const matchesSearch = !search || (card.dataset.search ?? "").includes(search);
+        const show = matchesDomain && matchesSearch;
+        card.style.display = show ? "" : "none";
+        if (show) visible++;
+      });
+
+      tierSections.forEach((section) => {
+        const anyVisible = Array.from(section.querySelectorAll<HTMLDivElement>(".org-card")).some(
+          (c) => c.style.display !== "none"
+        );
+        section.style.display = anyVisible ? "" : "none";
+      });
+
+      if (resultCount) {
+        resultCount.textContent = `${visible} of ${cards.length} shown`;
+      }
+    }
+
+    domainFilter?.addEventListener("change", applyFilters);
+    searchFilter?.addEventListener("input", applyFilters);
+    clearBtn?.addEventListener("click", () => {
+      if (domainFilter) domainFilter.value = "";
+      if (searchFilter) searchFilter.value = "";
+      applyFilters();
+    });
+
+    applyFilters();
+  </script>
+
+  <style>
+    .registry-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      align-items: flex-end;
+      margin-bottom: var(--space-2);
+      background: var(--color-bg-subtle);
+    }
+
+    .filter-field {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      flex: 1 1 220px;
+    }
+
+    .filter-field label {
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    .filter-field input,
+    .filter-field select {
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+    }
+
+    .filter-field input:focus,
+    .filter-field select:focus {
+      border-color: var(--color-accent);
+      outline: none;
+    }
+
+    .filter-clear {
+      white-space: nowrap;
+    }
+
+    .result-count {
+      color: var(--color-text-muted);
+      font-size: var(--fs-small);
+      margin-bottom: var(--space-5);
+    }
+
+    .tier-section {
+      margin-top: var(--space-7);
+    }
+
+    .tier-section:first-of-type {
+      margin-top: var(--space-4);
+    }
+
+    .tier-heading {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-2);
+    }
+
+    .tier-intro {
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-5);
+      max-width: 760px;
+    }
+
+    .members-grid {
+      margin-top: var(--space-4);
+    }
+
+    .org-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .org-card-link {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: var(--radius-md);
+    }
+
+    .org-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .org-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      object-fit: contain;
+      background: var(--color-bg-subtle);
+    }
+
+    .org-logo-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-green-800);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+    }
+
+    .mail-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-border);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .mail-dot-active {
+      background: var(--color-green-600);
+    }
+
+    .org-name {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+
+    .org-fullname {
+      color: var(--color-text-muted);
+      font-size: var(--fs-small);
+      margin-bottom: 0;
+    }
+
+    .org-desc {
+      font-size: var(--fs-small);
+      margin-bottom: 0;
+      flex-grow: 1;
+    }
+
+    .org-meta {
+      margin-top: auto;
+      padding-top: var(--space-2);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35em;
+      font-size: var(--fs-small);
+      font-weight: 700;
+      padding: 0.2em 0.7em;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-domain {
+      background: var(--color-bg-subtle);
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      font-weight: 600;
+      text-transform: none;
+    }
+
+    .badge-tier-engaged {
+      background: var(--color-badge-engaged-bg);
+      color: var(--color-badge-engaged-text);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+
+    .badge-tier-to-be-onboarded {
+      background: var(--color-badge-onboard-bg);
+      color: var(--color-badge-onboard-text);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+
+    .badge-tier-not-member {
+      background: var(--color-badge-notmember-bg);
+      color: var(--color-badge-notmember-text);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+  </style>
+</BaseLayout>

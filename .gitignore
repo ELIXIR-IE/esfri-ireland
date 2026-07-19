@@ -20,3 +20,6 @@ npm-debug.log*
 # editor
 .vscode/
 .idea/
+
+# Claude Code local harness state
+.claude/

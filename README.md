@@ -22,6 +22,36 @@ Pages are currently placeholders — content is added incrementally.
 
 ## Local development
 
+### Docker (preferred)
+
+No local Node install required. From the repo root:
+
+```bash
+sudo docker compose up --build
+```
+
+Then open **http://localhost:4321/**. Hot reload is on — edits to files
+under `src/` or `public/` are reflected live. `Ctrl+C` stops it.
+
+If it's already running in the background and you just want to check on it:
+
+```bash
+sudo docker compose ps
+sudo docker compose logs -f site
+```
+
+To stop and remove the container:
+
+```bash
+sudo docker compose down
+```
+
+`sudo` is required here because the local Docker install isn't in
+passwordless/rootless mode — drop `sudo` if your Docker setup doesn't
+need it.
+
+### Node (alternative)
+
 Requires Node.js >= 22.12.
 
 ```bash

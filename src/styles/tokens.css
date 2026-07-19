@@ -29,6 +29,14 @@
   --color-nav-bg: var(--color-green-900);
   --color-nav-text: #ffffff;
 
+  /* Members registry tier badges */
+  --color-badge-engaged-bg: #e4f8f1;
+  --color-badge-engaged-text: #0d7a56;
+  --color-badge-onboard-bg: #fff4e0;
+  --color-badge-onboard-text: #a15c00;
+  --color-badge-notmember-bg: #f1f3f2;
+  --color-badge-notmember-text: #5b6b63;
+
   /* Type scale */
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --fs-h1: clamp(2rem, 1.6rem + 1.6vw, 3.25rem);
@@ -68,6 +76,12 @@
     --color-text-muted: #9fb6ab;
     --color-heading: #ffffff;
     --color-link: #4fd894;
+    --color-badge-engaged-bg: #0f3327;
+    --color-badge-engaged-text: #4fe3ae;
+    --color-badge-onboard-bg: #3a2a0c;
+    --color-badge-onboard-text: #f6b34d;
+    --color-badge-notmember-bg: #1c2b25;
+    --color-badge-notmember-text: #9fb6ab;
   }
 }
 

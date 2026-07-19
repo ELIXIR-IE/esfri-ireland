@@ -2,14 +2,85 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="About">
+<BaseLayout title="About" description="What IENN is, why it exists, and who it's working with.">
   <section class="section page-header-section">
     <div class="container">
       <p class="eyebrow">About</p>
       <h1>About IENN</h1>
       <p class="section-intro" style="margin-left:0;">
-        Content for this page is coming soon.
+        <strong>IENN</strong> — the <strong>Irish ESFRI Node Network</strong> — is a
+        grassroots, cross-domain forum for Ireland's national nodes within
+        European Strategy Forum on Research Infrastructures (ESFRI) Research
+        Infrastructures. It is <strong>not an officially sanctioned body</strong>.
+        It began as an open initiative formed by two of Ireland's existing
+        ESFRI nodes, <strong>DARIAH-Ireland</strong> and <strong>ELIXIR-Ireland</strong>,
+        to bring the country's ESFRI-facing communities into a single,
+        coordinated conversation.
       </p>
     </div>
   </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Why IENN exists</h2>
+      <ul class="about-list">
+        <li>Act as an open, cross-domain forum connecting Irish researchers to a gateway to Europe.</li>
+        <li>Reduce redundancy across Ireland's ESFRI-related investments.</li>
+        <li>Ensure alignment on common technological and infrastructural needs across domains.</li>
+        <li>Provide a unified, coordinated voice for Ireland's research domains in ESFRI-related matters.</li>
+        <li>Collaborate on shared projects and initiatives, including the European Open Science Cloud (EOSC), EOSC Ireland, and INFRADEV.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-subtle">
+    <div class="container">
+      <h2>Our goal</h2>
+      <p>
+        Our goal is to support researchers across all domains with
+        well-provisioned research infrastructure, backed by ESFRIs that meet
+        Ireland's needs with European and global solutions that actually
+        work in practice.
+      </p>
+      <p>
+        Part of that means aligning over metadata and standards — and
+        especially <strong>FAIR data</strong> and <strong>open science</strong> —
+        which we consider core to a healthy research ecosystem.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Stakeholders</h2>
+      <p>
+        <strong>Research Ireland</strong> and the <strong>Department of
+        Further and Higher Education, Research, Innovation and Science
+        (DFHERIS)</strong> are key stakeholders in this effort.
+      </p>
+      <p>
+        We're also working to engage and align with other government
+        departments whose remits intersect with ESFRI infrastructure needs —
+        for example the <strong>Department of Health</strong>, given the
+        sensitive nature of health data and the EU's
+        <strong>European Health Data Space (EHDS)</strong> and wider data
+        space initiatives.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .about-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      max-width: 760px;
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .about-list li {
+      color: var(--color-text);
+    }
+  </style>
 </BaseLayout>

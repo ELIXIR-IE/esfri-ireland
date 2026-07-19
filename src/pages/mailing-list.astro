@@ -1,15 +1,80 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const listservAddress = "LISTSERV@LISTSERV.HEANET.IE";
+const listName = "ESFRI-IRELAND";
+const listAddress = "esfri-ireland@listserv.heanet.ie";
+const supportEmail = "gavin.farrell@ul.ie";
+const subscribeBody = `SUBSCRIBE ${listName} Your Full Name`;
+const subscribeMailto = `mailto:${listservAddress}?body=${encodeURIComponent(subscribeBody)}`;
+const heanetPageUrl = `https://listserv.heanet.ie/cgi-bin/wa?A0=${listName}`;
 ---
 
-<BaseLayout title="Mailing List">
+<BaseLayout title="Mailing List" description="How to subscribe to the ESFRI Ireland mailing list.">
   <section class="section page-header-section">
     <div class="container">
       <p class="eyebrow">Stay in touch</p>
       <h1>Mailing List</h1>
       <p class="section-intro" style="margin-left:0;">
-        Content for this page is coming soon.
+        The ESFRI Ireland mailing list (<code>{listAddress}</code>) is the
+        primary channel for IENN news, events, and coordination across
+        Ireland's ESFRI-facing community.
       </p>
     </div>
   </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Subscribe to the ESFRI Ireland Mailing List</h2>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>To subscribe via email</h3>
+          <p>
+            Send an email to <a href={`mailto:${listservAddress}`}>{listservAddress}</a> with
+            the following as the body of the message (replace "Your Full Name"
+            with your own name):
+          </p>
+          <pre class="subscribe-command">{subscribeBody}</pre>
+          <a class="btn btn-primary" href={subscribeMailto}>
+            Open a pre-filled subscribe email
+          </a>
+        </div>
+
+        <div class="card">
+          <h3>Or subscribe via the web</h3>
+          <p>
+            Alternatively, use HEAnet's Listserv web interface to subscribe,
+            unsubscribe, or manage your subscription options.
+          </p>
+          <a class="btn btn-outline" href={heanetPageUrl} target="_blank" rel="noopener">
+            Open the HEAnet Listserv page
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-subtle">
+    <div class="container">
+      <h2>Support</h2>
+      <p>
+        Questions about the list or IENN more generally can be sent to
+        <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .subscribe-command {
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: var(--space-3) var(--space-4);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95rem;
+      overflow-x: auto;
+      margin-bottom: var(--space-4);
+    }
+  </style>
 </BaseLayout>
