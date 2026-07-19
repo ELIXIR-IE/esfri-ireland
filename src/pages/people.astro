@@ -27,13 +27,13 @@ const issueUrl =
   "https://github.com/ELIXIR-IE/esfri-ireland/issues/new?template=person_listing.yml";
 ---
 
-<BaseLayout title="People" description="The people behind IENN's founding ESFRI nodes.">
+<BaseLayout title="People" description="IENN's active members, grouped by node.">
   <section class="section page-header-section">
     <div class="container">
       <p class="eyebrow">People</p>
       <h1>People</h1>
       <p class="section-intro" style="margin-left:0;">
-        The people behind IENN's founding ESFRI nodes, grouped by node.
+        IENN's active members, grouped by node.
       </p>
     </div>
   </section>
@@ -56,7 +56,7 @@ const issueUrl =
             {group.esfri}
             <span class="people-group-domain">{group.domain}</span>
           </h2>
-          <div class="grid grid-3 people-grid">
+          <div class="grid people-grid">
             {group.people.map((person) => (
               <div class="card person-card" data-esfri={person.esfri}>
                 <div class="person-avatar" aria-hidden="true">
@@ -183,6 +183,8 @@ const issueUrl =
 
     .people-grid {
       margin-top: var(--space-4);
+      grid-template-columns: repeat(auto-fill, 240px);
+      justify-content: start;
     }
 
     .person-card {
@@ -191,6 +193,7 @@ const issueUrl =
       align-items: center;
       text-align: center;
       gap: var(--space-2);
+      width: 240px;
     }
 
     .person-avatar {
