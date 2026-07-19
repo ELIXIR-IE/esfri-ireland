@@ -1,5 +1,6 @@
 ---
 import "../styles/tokens.css";
+import { ICONS } from "../lib/icons";
 
 interface Props {
   title: string;
@@ -76,8 +77,12 @@ function isActive(href: string) {
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p class="footer-disclaimer">IENN is a grassroots network of Irish ESFRI nodes — not an official or ESFRI-endorsed body.</p>
+        <p class="footer-disclaimer">
+          <span class="footer-disclaimer-icon" set:html={ICONS.info} />
+          IENN is a grassroots network of Irish ESFRI nodes — not an official or ESFRI-endorsed body.
+        </p>
         <a class="footer-github" href="https://github.com/ELIXIR-IE/esfri-ireland/issues/new/choose" target="_blank" rel="noopener">
+          <span class="footer-github-icon" set:html={ICONS.github} />
           Suggest an update
         </a>
       </div>
@@ -288,7 +293,7 @@ function isActive(href: string) {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: var(--space-4);
         padding: var(--space-5);
       }
@@ -298,6 +303,7 @@ function isActive(href: string) {
         align-items: center;
         gap: var(--space-2);
         flex-shrink: 0;
+        white-space: nowrap;
         color: #fff;
         font-weight: 600;
         padding: 0.55rem 1.2rem;
@@ -310,7 +316,17 @@ function isActive(href: string) {
         text-decoration: none;
       }
 
+      .footer-github-icon {
+        display: inline-flex;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
       .footer-disclaimer {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
         margin: 0;
         max-width: 560px;
         font-size: 0.85rem;
@@ -318,10 +334,23 @@ function isActive(href: string) {
         line-height: 1.5;
       }
 
-      @media (max-width: 640px) {
+      .footer-disclaimer-icon {
+        display: inline-flex;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      @media (max-width: 900px) {
         .footer-inner {
+          flex-wrap: wrap;
           justify-content: center;
           text-align: center;
+        }
+
+        .footer-disclaimer {
+          justify-content: center;
         }
       }
 

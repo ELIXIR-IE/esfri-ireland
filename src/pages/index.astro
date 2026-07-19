@@ -1,36 +1,42 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { ICONS, NETWORK_ILLUSTRATION } from "../lib/icons";
 
 const base = import.meta.env.BASE_URL;
 
 const highlights = [
   {
+    icon: ICONS.globe,
     title: "Gateway to Europe",
     text: "Connecting Irish researchers and infrastructure to the wider European ESFRI landscape.",
   },
   {
+    icon: ICONS.layers,
     title: "Coordinated, not duplicated",
     text: "Reducing redundancy and aligning Ireland's ESFRI-related investments and technological needs.",
   },
   {
+    icon: ICONS.megaphone,
     title: "One voice, many domains",
     text: "A unified, coordinated voice for Ireland's research domains in ESFRI-related matters.",
   },
 ];
-
 ---
 
 <BaseLayout title="Home">
   <section class="section page-header-section">
-    <div class="container">
-      <p class="eyebrow">Irish ESFRI Node Network</p>
-      <h1>Irish ESFRI Node Network (IENN)</h1>
-      <p class="section-intro" style="margin-left:0;">
-        IENN is a grassroots, cross-domain forum coordinating Ireland's
-        engagement with European Strategy Forum on Research Infrastructures
-        (ESFRI) Research Infrastructures — connecting researchers across
-        every domain to Europe's shared research infrastructure landscape.
-      </p>
+    <div class="container hero-row">
+      <div class="hero-text">
+        <p class="eyebrow">Irish ESFRI Node Network</p>
+        <h1>Irish ESFRI Node Network (IENN)</h1>
+        <p class="section-intro" style="margin-left:0;">
+          IENN is a grassroots, cross-domain forum coordinating Ireland's
+          engagement with European Strategy Forum on Research Infrastructures
+          (ESFRI) Research Infrastructures — connecting researchers across
+          every domain to Europe's shared research infrastructure landscape.
+        </p>
+      </div>
+      <div class="hero-illustration" aria-hidden="true" set:html={NETWORK_ILLUSTRATION} />
     </div>
   </section>
 
@@ -38,7 +44,8 @@ const highlights = [
     <div class="container">
       <div class="grid grid-3">
         {highlights.map((h) => (
-          <div class="card">
+          <div class="card highlight-card">
+            <span class="icon-badge" set:html={h.icon} />
             <h3>{h.title}</h3>
             <p style="margin-bottom:0;">{h.text}</p>
           </div>
@@ -49,26 +56,74 @@ const highlights = [
 
   <section class="section section-subtle">
     <div class="container">
-      <div class="card callout">
-        <p class="eyebrow">Where we are today</p>
-        <h2>A grassroots coordination layer</h2>
-        <p>
-          IENN is <strong>not a formally ESFRI-endorsed body</strong>. It
-          began as a bottom-up initiative led by DARIAH-Ireland and
-          ELIXIR-Ireland, and operates today as an informal coordination
-          layer for Ireland's ESFRI-facing community. As engagement and
-          support grow across Ireland's research domains, we intend to
-          pursue more formal recognition and structures.
-        </p>
-        <a class="btn btn-outline" href={`${base}about/`}>Read more about IENN</a>
+      <div class="card callout callout-row">
+        <div class="callout-text">
+          <p class="eyebrow">Where we are today</p>
+          <h2>A grassroots coordination layer</h2>
+          <p>
+            IENN is <strong>not a formally ESFRI-endorsed body</strong>. It
+            began as a bottom-up initiative led by DARIAH-Ireland and
+            ELIXIR-Ireland, and operates today as an informal coordination
+            layer for Ireland's ESFRI-facing community. As engagement and
+            support grow across Ireland's research domains, we intend to
+            pursue more formal recognition and structures.
+          </p>
+          <a class="btn btn-outline" href={`${base}about/`}>Read more about IENN</a>
+        </div>
+        <span class="callout-icon" aria-hidden="true" set:html={ICONS.sprout} />
       </div>
     </div>
   </section>
 
-
   <style>
+    .hero-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-7);
+    }
+
+    .hero-text {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .hero-illustration {
+      flex-shrink: 0;
+      width: 260px;
+    }
+
+    .hero-illustration svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 900px) {
+      .hero-illustration {
+        display: none;
+      }
+    }
+
+    .highlight-card {
+      display: flex;
+      flex-direction: column;
+      padding: var(--space-6) var(--space-5);
+    }
+
     .callout {
       border-left: 4px solid var(--color-accent);
+    }
+
+    .callout-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-6);
+    }
+
+    .callout-text {
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .callout h2 {
@@ -77,6 +132,30 @@ const highlights = [
 
     .callout p {
       max-width: 700px;
+    }
+
+    .callout-icon {
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      color: var(--color-accent);
+      opacity: 0.18;
+    }
+
+    .callout-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 780px) {
+      .callout-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .callout-icon {
+        display: none;
+      }
     }
   </style>
 </BaseLayout>

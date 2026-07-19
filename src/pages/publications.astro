@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import EmptyState from "../components/EmptyState.astro";
+import { ICONS } from "../lib/icons";
 ---
 
 <BaseLayout title="Publications">
@@ -8,8 +10,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p class="eyebrow">Publications</p>
       <h1>Publications</h1>
       <p class="section-intro" style="margin-left:0;">
-        Content for this page is coming soon.
+        Papers, reports, and outputs related to IENN's work.
       </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <EmptyState icon={ICONS.document} />
     </div>
   </section>
 </BaseLayout>

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NewsEventsSubNav from "../../components/NewsEventsSubNav.astro";
+import EmptyState from "../../components/EmptyState.astro";
+import { ICONS } from "../../lib/icons";
 ---
 
 <BaseLayout title="News" description="News from across Ireland's ESFRI community.">
@@ -18,9 +20,7 @@ import NewsEventsSubNav from "../../components/NewsEventsSubNav.astro";
 
   <section class="section">
     <div class="container">
-      <p class="section-intro" style="margin-left:0;">
-        Content for this page is coming soon.
-      </p>
+      <EmptyState icon={ICONS.newspaper} />
     </div>
   </section>
 </BaseLayout>

@@ -265,6 +265,38 @@ img {
   letter-spacing: 0.02em;
 }
 
+/* Icon system: monoline SVGs sized via these utilities, coloured via
+   currentColor so they inherit whatever text colour surrounds them. */
+.icon-sm {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.icon-lg {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  flex-shrink: 0;
+  margin-bottom: var(--space-3);
+}
+
+.icon-badge svg {
+  width: 30px;
+  height: 30px;
+}
+
 .divider {
   border: none;
   border-top: 1px solid var(--color-border);

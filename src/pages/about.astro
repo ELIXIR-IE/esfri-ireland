@@ -1,5 +1,37 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { ICONS } from "../lib/icons";
+
+const whyList = [
+  { icon: ICONS.link, text: "Act as an open, cross-domain forum connecting Irish researchers to a gateway to Europe." },
+  { icon: ICONS.shieldCheck, text: "Reduce redundancy across Ireland's ESFRI-related investments." },
+  { icon: ICONS.grid, text: "Ensure alignment on common technological and infrastructural needs across domains." },
+  { icon: ICONS.megaphone, text: "Provide a unified, coordinated voice for Ireland's research domains in ESFRI-related matters." },
+  { icon: ICONS.share, text: "Collaborate on shared projects and initiatives, including the European Open Science Cloud (EOSC), EOSC Ireland, and the HORIZON Europe INFRADEV funding programme." },
+];
+
+const stakeholders = [
+  {
+    icon: ICONS.users,
+    title: "Researchers",
+    text: "The end-users of ESFRI infrastructure — the reason IENN exists.",
+  },
+  {
+    icon: ICONS.building,
+    title: "Infrastructure Providers",
+    text: "ESFRIs, EIROs, and national nodes delivering the infrastructure itself.",
+  },
+  {
+    icon: ICONS.coins,
+    title: "Funders",
+    text: "Research Ireland and national investment such as INSPIRE.",
+  },
+  {
+    icon: ICONS.landmark,
+    title: "Government",
+    text: "DFHERIS, and departments like Health given EHDS and data-space relevance.",
+  },
+];
 ---
 
 <BaseLayout title="About" description="What IENN is, why it exists, and who it's working with.">
@@ -10,13 +42,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p class="section-intro" style="margin-left:0;">
         <strong>IENN</strong> — the <strong>Irish ESFRI Node Network</strong> — is a
         grassroots, cross-domain forum for Ireland's national nodes within the
-        European Strategy Forum on Research Infrastructures (ESFRI). 
-        It has <strong>no formal or official connection to the European ESFRI forum</strong>. 
-        It began as an open initiative formed by two of Ireland's existing 
-        ESFRI nodes, <strong>DARIAH-Ireland</strong> and <strong>ELIXIR-Ireland</strong>, 
-        to bring the country's ESFRI-facing communities into a single, 
-        coordinated conversation. While it is a grassroots effort, we hope to 
-        actively engage with the government departments responsible for and engaged 
+        European Strategy Forum on Research Infrastructures (ESFRI).
+        It has <strong>no formal or official connection to the European ESFRI forum</strong>.
+        It began as an open initiative formed by two of Ireland's existing
+        ESFRI nodes, <strong>DARIAH-Ireland</strong> and <strong>ELIXIR-Ireland</strong>,
+        to bring the country's ESFRI-facing communities into a single,
+        coordinated conversation. While it is a grassroots effort, we hope to
+        actively engage with the government departments responsible for and engaged
         with ESFRIs (such as DFHERIS) to support Ireland's research infrastructure.
       </p>
     </div>
@@ -25,12 +57,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section">
     <div class="container">
       <h2>Why IENN exists</h2>
-      <ul class="about-list">
-        <li>Act as an open, cross-domain forum connecting Irish researchers to a gateway to Europe.</li>
-        <li>Reduce redundancy across Ireland's ESFRI-related investments.</li>
-        <li>Ensure alignment on common technological and infrastructural needs across domains.</li>
-        <li>Provide a unified, coordinated voice for Ireland's research domains in ESFRI-related matters.</li>
-        <li>Collaborate on shared projects and initiatives, including the European Open Science Cloud (EOSC), EOSC Ireland, and the HORIZON Europe INFRADEV funding programme.</li>
+      <ul class="why-list">
+        {whyList.map((item) => (
+          <li>
+            <span class="why-icon" aria-hidden="true" set:html={item.icon} />
+            <span>{item.text}</span>
+          </li>
+        ))}
       </ul>
     </div>
   </section>
@@ -44,12 +77,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Ireland's needs with European and global solutions that actually
         work in practice.
       </p>
-      <p>
-        Part of that means aligning over shared infrastructure, and ensuring 
-        systems are interoperable via metadata and data standards — and 
-        especially <strong>FAIR data</strong> and <strong>Open Science</strong> — 
-        which we consider core to a healthy research ecosystem.
-      </p>
+      <div class="goal-row">
+        <span class="goal-icon" aria-hidden="true" set:html={ICONS.flask} />
+        <p style="margin-bottom:0;">
+          Part of that means aligning over shared infrastructure, and ensuring
+          systems are interoperable via metadata and data standards — and
+          especially <strong>FAIR data</strong> and <strong>Open Science</strong> —
+          which we consider core to a healthy research ecosystem.
+        </p>
+      </div>
       <p>
         ESFRIs also play an important role in Ireland's wider research
         infrastructure landscape: representing research needs and domains as
@@ -64,37 +100,77 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="section">
     <div class="container">
-      <h2>Stakeholders</h2>
-      <p>
-        <strong>Researchers</strong> themselves are our primary stakeholders, 
-        as the end-users of these infrastructures. At a national level, 
-        <strong>Research Ireland</strong> and the <strong>Department of
-        Further and Higher Education, Research, Innovation and Science
-        (DFHERIS)</strong> are also key stakeholders in this effort.
-      </p>
-      <p>
-        We're also working to engage and align with other government
-        departments whose remits intersect with ESFRI infrastructure needs —
-        for example the <strong>Department of Health</strong>, given the
-        sensitive nature of health data and the EU's
-        <strong>European Health Data Space (EHDS)</strong> and wider data
-        space initiatives.
-      </p>
+      <h2 class="section-heading">Stakeholders</h2>
+      <div class="grid grid-4">
+        {stakeholders.map((s) => (
+          <div class="card stakeholder-card">
+            <span class="icon-badge" set:html={s.icon} />
+            <h3>{s.title}</h3>
+            <p style="margin-bottom:0;">{s.text}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
   <style>
-    .about-list {
+    .why-list {
       display: flex;
       flex-direction: column;
-      gap: var(--space-3);
-      max-width: 760px;
+      gap: var(--space-4);
+      max-width: 780px;
       margin: 0;
-      padding-left: 1.2rem;
+      padding: 0;
+      list-style: none;
     }
 
-    .about-list li {
+    .why-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
       color: var(--color-text);
+    }
+
+    .why-icon {
+      display: inline-flex;
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      margin-top: 2px;
+      color: var(--color-accent);
+    }
+
+    .why-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .goal-row {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .goal-icon {
+      display: inline-flex;
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      margin-top: 2px;
+      color: var(--color-accent);
+    }
+
+    .goal-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .stakeholder-card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
     }
   </style>
 </BaseLayout>
