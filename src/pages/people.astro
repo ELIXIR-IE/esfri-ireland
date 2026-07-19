@@ -14,11 +14,13 @@ interface Person {
 
 const people = yaml.load(rawYaml) as Person[];
 
-const groupOrder = [...new Set(people.map((p) => p.esfri))];
+const groupOrder = [...new Set(people.map((p) => p.esfri))].sort((a, b) => a.localeCompare(b));
 const groups = groupOrder.map((esfri) => ({
   esfri,
   domain: people.find((p) => p.esfri === esfri)!.domain,
-  people: people.filter((p) => p.esfri === esfri),
+  people: people
+    .filter((p) => p.esfri === esfri)
+    .sort((a, b) => a.name.localeCompare(b.name)),
 }));
 
 const issueUrl =
@@ -38,15 +40,25 @@ const issueUrl =
 
   <section class="section">
     <div class="container">
+      <div class="registry-filters card">
+        <div class="filter-field">
+          <label for="esfri-filter">Filter by ESFRI / node</label>
+          <select id="esfri-filter">
+            <option value="">All nodes</option>
+            {groupOrder.map((esfri) => <option value={esfri}>{esfri}</option>)}
+          </select>
+        </div>
+      </div>
+
       {groups.map((group) => (
-        <div class="people-group">
+        <div class="people-group" data-people-group={group.esfri}>
           <h2 class="people-group-heading">
             {group.esfri}
             <span class="people-group-domain">{group.domain}</span>
           </h2>
           <div class="grid grid-3 people-grid">
             {group.people.map((person) => (
-              <div class="card person-card">
+              <div class="card person-card" data-esfri={person.esfri}>
                 <div class="person-avatar" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="currentColor">
                     <circle cx="12" cy="8" r="4"></circle>
@@ -59,12 +71,16 @@ const issueUrl =
                   <span class="badge badge-esfri">{person.esfri}</span>
                   <span class="badge badge-institute">{person.institute}</span>
                 </div>
-                <a class="person-mail" href={`mailto:${person.email}`} aria-label={`Email ${person.name}`}>
+                <a
+                  class="person-mail"
+                  href={`mailto:${person.email}`}
+                  title={person.email}
+                  aria-label={`Email ${person.name} (${person.email})`}
+                >
                   <svg class="mail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                     <path d="m22 6-10 7L2 6"></path>
                   </svg>
-                  {person.email}
                 </a>
               </div>
             ))}
@@ -85,7 +101,69 @@ const issueUrl =
     </div>
   </section>
 
+  <script>
+    const esfriFilter = document.querySelector<HTMLSelectElement>("#esfri-filter");
+    const cards = Array.from(document.querySelectorAll<HTMLDivElement>(".person-card"));
+    const groupSections = Array.from(document.querySelectorAll<HTMLDivElement>("[data-people-group]"));
+
+    function applyFilter() {
+      const esfri = esfriFilter?.value ?? "";
+
+      cards.forEach((card) => {
+        const show = !esfri || card.dataset.esfri === esfri;
+        card.style.display = show ? "" : "none";
+      });
+
+      groupSections.forEach((section) => {
+        const anyVisible = Array.from(section.querySelectorAll<HTMLDivElement>(".person-card")).some(
+          (c) => c.style.display !== "none"
+        );
+        section.style.display = anyVisible ? "" : "none";
+      });
+    }
+
+    esfriFilter?.addEventListener("change", applyFilter);
+    applyFilter();
+  </script>
+
   <style>
+    .registry-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      align-items: flex-end;
+      margin-bottom: var(--space-6);
+      background: var(--color-bg-subtle);
+    }
+
+    .filter-field {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      flex: 1 1 220px;
+    }
+
+    .filter-field label {
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    .filter-field select {
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+    }
+
+    .filter-field select:focus {
+      border-color: var(--color-accent);
+      outline: none;
+    }
+
     .people-group {
       margin-bottom: var(--space-7);
     }
@@ -165,11 +243,19 @@ const issueUrl =
     .person-mail {
       display: inline-flex;
       align-items: center;
-      gap: 0.4em;
-      font-size: var(--fs-small);
-      font-weight: 600;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      color: var(--color-text-muted);
       margin-top: var(--space-2);
-      word-break: break-all;
+      border: 1px solid var(--color-border);
+    }
+
+    .person-mail:hover {
+      color: var(--color-accent-contrast);
+      background: var(--color-accent);
+      border-color: var(--color-accent);
     }
 
     .mail-icon {
