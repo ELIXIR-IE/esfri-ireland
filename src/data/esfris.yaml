@@ -89,11 +89,14 @@
   domain: Social & Cultural Innovation
   eosc_cluster: SSHOC
   ireland_status: Member (via ISSDA)
-  tier: to_be_onboarded
+  tier: engaged
   category: esfri
   roadmap_status: Landmark  # Project | Landmark, from the 2021 ESFRI roadmap (dated)
   site_structure: Distributed  # Distributed | Single-sited, from the 2021 ESFRI roadmap (dated)
-  website: "https://www.ucd.ie/issda/"
+  website: "https://www.cessda.eu/"
+  national_node:
+    name: "ISSDA"
+    website: "https://www.ucd.ie/issda/"
   logo: img/logos/cessda-eric.png
   email: null
 
@@ -153,7 +156,10 @@
   category: esfri
   roadmap_status: Landmark  # Project | Landmark, from the 2021 ESFRI roadmap (dated)
   site_structure: Distributed  # Distributed | Single-sited, from the 2021 ESFRI roadmap (dated)
-  website: "https://dariah.ie/"
+  website: "https://www.dariah.eu/"
+  national_node:
+    name: "DARIAH Ireland"
+    website: "https://dariah.ie/"
   logo: img/logos/dariah-eric.png
   email: null
 
@@ -288,7 +294,10 @@
   category: esfri
   roadmap_status: Landmark  # Project | Landmark, from the 2021 ESFRI roadmap (dated)
   site_structure: Distributed  # Distributed | Single-sited, from the 2021 ESFRI roadmap (dated)
-  website: "https://elixir-ireland.ie/"
+  website: "https://elixir-europe.org/"
+  national_node:
+    name: "ELIXIR Ireland"
+    website: "https://elixir-ireland.ie/"
   logo: img/logos/elixir.png
   email: null
 
