@@ -1,0 +1,48 @@
+name: Add or update a person on the People page
+description: Submit yourself or someone else to be listed (or updated) on the IENN People registry.
+title: "[People] "
+labels:
+  - people
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: What kind of change is this?
+      options:
+        - Add a new person
+        - Update an existing person's details
+        - Remove a person
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+    validations:
+      required: true
+  - type: input
+    id: email
+    attributes:
+      label: Email
+      description: Institutional email preferred.
+    validations:
+      required: true
+  - type: input
+    id: esfri
+    attributes:
+      label: ESFRI / node affiliation
+      description: e.g. ELIXIR-IE, DARIAH-IE, ISSDA
+    validations:
+      required: true
+  - type: input
+    id: institute
+    attributes:
+      label: Institution
+      description: e.g. UL, UCC, UCD, TCD
+    validations:
+      required: true
+  - type: input
+    id: role
+    attributes:
+      label: Role / notes
+      description: e.g. "Lead - Head of Node", "Deputy lead", "Training Coordinator"

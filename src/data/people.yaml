@@ -1,0 +1,61 @@
+# People behind IENN's founding ESFRI nodes.
+#
+# Source: ESFRI-Ireland mailing list membership sheet (2026-07-19).
+# `esfri` is the node/list-group code as given in that sheet (ELIXIR-IE,
+# DARIAH-IE, ISSDA — ISSDA being the Irish node of CESSDA-ERIC).
+
+- name: Gavin Farrell
+  email: gavin.farrell@ul.ie
+  esfri: ELIXIR-IE
+  domain: Life science data
+  institute: UL
+  role: Support - Node Coordinator
+
+- name: Aedín Culhane
+  email: aedin.culhane@ul.ie
+  esfri: ELIXIR-IE
+  domain: Life science data
+  institute: UL
+  role: Lead - Head of Node
+
+- name: Maria Doyle
+  email: maria.doyle@ul.ie
+  esfri: ELIXIR-IE
+  domain: Life science data
+  institute: UL
+  role: Training lead - Training Coordinator
+
+- name: Laura Whelan
+  email: laurawhelan@rcsi.ie
+  esfri: ELIXIR-IE
+  domain: Life science data
+  institute: RCSI
+  role: Deputy lead - Deputy Head of Node
+
+- name: Pilib Ó Broin
+  email: pilib.obroin@universityofgalway.ie
+  esfri: ELIXIR-IE
+  domain: Life science data
+  institute: UG
+  role: Deputy lead - Deputy Head of Node
+
+- name: Joan Murphy
+  email: joan.y.murphy@tcd.ie
+  esfri: DARIAH-IE
+  domain: Digital Humanities
+  institute: TCD
+  role: Lead
+
+- name: Arlene Healy
+  email: arlene.healy@ucd.ie
+  esfri: ISSDA
+  domain: Social Science data
+  institute: UCD
+  role: Lead
+
+- name: Vanessa Buckley
+  email: vanessa.r.buckley@ucd.ie
+  esfri: ISSDA
+  domain: Social Science data
+  institute: UCD
+  role: Data Manager

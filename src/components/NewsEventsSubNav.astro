@@ -1,0 +1,47 @@
+---
+interface Props {
+  active: "news" | "events";
+}
+
+const { active } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="subnav-bar">
+  <div class="container">
+    <nav class="subnav-tabs" aria-label="News and Events sections">
+      <a href={`${base}news-events/`} aria-current={active === "news" ? "page" : undefined}>News</a>
+      <a href={`${base}news-events/events/`} aria-current={active === "events" ? "page" : undefined}>Events</a>
+    </nav>
+  </div>
+</div>
+
+<style>
+  .subnav-bar {
+    background: var(--color-bg-subtle);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .subnav-tabs {
+    display: flex;
+    gap: var(--space-5);
+  }
+
+  .subnav-tabs a {
+    display: inline-block;
+    padding: var(--space-3) 0.1rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    border-bottom: 3px solid transparent;
+  }
+
+  .subnav-tabs a:hover {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .subnav-tabs a[aria-current="page"] {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+  }
+</style>
