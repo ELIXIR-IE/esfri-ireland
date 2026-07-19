@@ -1,0 +1,36 @@
+name: Content update or submission
+description: Submit a news item, event, or a correction/update to the IENN website.
+title: "[Content] "
+labels:
+  - content
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which page/area does this relate to?
+      options:
+        - Home
+        - About
+        - Mailing List
+        - News & Events
+        - Other / site-wide
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: What kind of change is this?
+      options:
+        - New news item
+        - New event
+        - Correction / update to existing content
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the content to add or change. Include dates, links, or attachments if relevant.
+    validations:
+      required: true

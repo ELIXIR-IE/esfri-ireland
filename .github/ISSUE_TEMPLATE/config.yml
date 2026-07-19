@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question or something else
+    url: https://github.com/ELIXIR-IE/esfri-ireland/issues/new
+    about: Open a blank issue if none of the templates fit.

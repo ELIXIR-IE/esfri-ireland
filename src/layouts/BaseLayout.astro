@@ -1,0 +1,320 @@
+---
+import "../styles/tokens.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "The Irish ESFRI Node Network (IENN) — connecting Ireland's research infrastructures." } = Astro.props;
+
+const nav = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/mailing-list", label: "Mailing List" },
+  { href: "/news-events", label: "News & Events" },
+];
+
+const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string) {
+  const target = (base + href.replace(/^\//, "")).replace(/\/+$/, "") || "/";
+  const current = currentPath.replace(/\/+$/, "") || "/";
+  if (href === "/") return current === (base.replace(/\/+$/, "") || "/");
+  return current === target || current.startsWith(target + "/");
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | IENN — Irish ESFRI Node Network</title>
+  </head>
+  <body>
+    <a class="skip-link visually-hidden" href="#main">Skip to content</a>
+
+    <header class="site-nav">
+      <div class="container site-nav-inner">
+        <a class="brand" href={`${base}`}>
+          <span class="brand-mark" aria-hidden="true">IENN</span>
+          <span class="brand-text">Irish ESFRI Node Network</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-list" aria-label="Toggle navigation menu">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <nav aria-label="Primary" class="primary-nav">
+          <ul class="nav-links" id="primary-nav-list">
+            {nav.map((item) => (
+              <li>
+                <a
+                  href={item.href === "/" ? base : `${base}${item.href.replace(/^\//, "")}/`}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="footer-github" href="https://github.com/ELIXIR-IE/esfri-ireland/issues/new/choose" target="_blank" rel="noopener">
+          Suggest an update
+        </a>
+      </div>
+      <div class="container footer-bottom">
+        <span>&copy; {new Date().getFullYear()} Irish ESFRI Node Network (IENN).</span>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
+      const links = document.querySelector<HTMLUListElement>(".nav-links");
+
+      toggle?.addEventListener("click", () => {
+        const isOpen = links?.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+      });
+
+      links?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          links.classList.remove("is-open");
+          toggle?.setAttribute("aria-expanded", "false");
+        });
+      });
+    </script>
+
+    <style>
+      .site-nav {
+        background: var(--color-nav-bg);
+        color: var(--color-nav-text);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .site-nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-5);
+        min-height: 76px;
+        padding-top: var(--space-2);
+        padding-bottom: var(--space-2);
+        position: relative;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .brand:hover {
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: var(--radius-sm);
+        background: var(--color-accent);
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        flex-shrink: 0;
+      }
+
+      .primary-nav {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      @media (min-width: 1080px) {
+        .primary-nav {
+          flex: none;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: var(--space-5);
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 500;
+        padding: 0.4rem 0.1rem;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+      }
+
+      .nav-links a:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .nav-links a[aria-current="page"] {
+        color: #fff;
+        border-bottom-color: var(--color-accent);
+      }
+
+      .nav-toggle {
+        display: none;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .nav-toggle:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-toggle-icon,
+      .nav-toggle-icon::before,
+      .nav-toggle-icon::after {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 2px;
+        position: relative;
+      }
+
+      .nav-toggle-icon::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+      }
+
+      .nav-toggle-icon::after {
+        content: "";
+        position: absolute;
+        top: 7px;
+      }
+
+      @media (max-width: 860px) {
+        .nav-toggle {
+          display: inline-flex;
+        }
+
+        .primary-nav {
+          flex: none;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
+          background: var(--color-green-900);
+          border-bottom: 3px solid var(--color-accent);
+          padding: var(--space-3) var(--space-5) var(--space-4);
+          box-shadow: var(--shadow-md);
+        }
+
+        .nav-links.is-open {
+          display: flex;
+        }
+
+        .nav-links li {
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-links a {
+          display: block;
+          padding: var(--space-3) 0;
+          border-bottom-color: transparent;
+        }
+
+        .nav-links a[aria-current="page"] {
+          border-bottom-color: transparent;
+        }
+      }
+
+      .site-footer {
+        background: var(--color-green-900);
+        color: rgba(255, 255, 255, 0.85);
+        border-top: 3px solid var(--color-accent);
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-4);
+        padding: var(--space-6) var(--space-5) var(--space-5);
+      }
+
+      .footer-github {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        color: #fff;
+        font-weight: 600;
+        padding: 0.55rem 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: var(--radius-sm);
+      }
+
+      .footer-github:hover {
+        background: rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding: var(--space-3) var(--space-5);
+        font-size: var(--fs-small);
+        color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+      }
+    </style>
+  </body>
+</html>
