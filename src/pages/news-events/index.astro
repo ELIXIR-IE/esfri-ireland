@@ -2,17 +2,20 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NewsEventsSubNav from "../../components/NewsEventsSubNav.astro";
 import EmptyState from "../../components/EmptyState.astro";
-import { ICONS } from "../../lib/icons";
+import { NEWS_ILLUSTRATION } from "../../lib/icons";
 ---
 
 <BaseLayout title="News" description="News from across Ireland's ESFRI community.">
   <section class="section page-header-section">
-    <div class="container">
-      <p class="eyebrow">Latest</p>
-      <h1>News &amp; Events</h1>
-      <p class="section-intro" style="margin-left:0;">
-        Updates from across Ireland's ESFRI community.
-      </p>
+    <div class="container hero-row">
+      <div class="hero-text">
+        <p class="eyebrow">Latest</p>
+        <h1>News &amp; Events</h1>
+        <p class="section-intro" style="margin-left:0;">
+          Updates from across Ireland's ESFRI community.
+        </p>
+      </div>
+      <div class="hero-illustration" aria-hidden="true" set:html={NEWS_ILLUSTRATION} />
     </div>
   </section>
 
@@ -20,7 +23,7 @@ import { ICONS } from "../../lib/icons";
 
   <section class="section">
     <div class="container">
-      <EmptyState icon={ICONS.newspaper} />
+      <EmptyState />
     </div>
   </section>
 </BaseLayout>

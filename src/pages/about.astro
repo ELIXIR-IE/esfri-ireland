@@ -71,22 +71,19 @@ const stakeholders = [
 
   <section class="section section-subtle">
     <div class="container">
-      <h2>Our goal</h2>
+      <h2 class="section-heading-icon"><span class="heading-icon" set:html={ICONS.flask} />Our goal</h2>
       <p>
         Our goal is to support researchers across all domains with
         well-provisioned research infrastructure, backed by ESFRIs that meet
         Ireland's needs with European and global solutions that actually
         work in practice.
       </p>
-      <div class="goal-row">
-        <span class="goal-icon" aria-hidden="true" set:html={ICONS.flask} />
-        <p style="margin-bottom:0;">
-          Part of that means aligning over shared infrastructure, and ensuring
-          systems are interoperable via metadata and data standards — and
-          especially <strong>FAIR data</strong> and <strong>Open Science</strong> —
-          which we consider core to a healthy research ecosystem.
-        </p>
-      </div>
+      <p>
+        Part of that means aligning over shared infrastructure, and ensuring
+        systems are interoperable via metadata and data standards — and
+        especially <strong>FAIR data</strong> and <strong>Open Science</strong> —
+        which we consider core to a healthy research ecosystem.
+      </p>
       <p>
         ESFRIs also play an important role in Ireland's wider research
         infrastructure landscape: representing research needs and domains
@@ -142,27 +139,6 @@ const stakeholders = [
     }
 
     .why-icon svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    .goal-row {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-3);
-      margin-bottom: var(--space-4);
-    }
-
-    .goal-icon {
-      display: inline-flex;
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      margin-top: 2px;
-      color: var(--color-accent);
-    }
-
-    .goal-icon svg {
       width: 100%;
       height: 100%;
     }

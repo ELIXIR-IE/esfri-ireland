@@ -297,6 +297,58 @@ img {
   height: 30px;
 }
 
+/* Two-column hero pattern: text left, a decorative illustration filling
+   the right-side deadspace, hidden on narrow viewports. Used on every
+   page's hero (Home, Publications, News, Events, People) — the
+   illustration itself differs per page (see src/lib/icons.ts). */
+.hero-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+}
+
+.hero-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.hero-illustration {
+  flex-shrink: 0;
+  width: 260px;
+}
+
+.hero-illustration svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .hero-illustration {
+    display: none;
+  }
+}
+
+/* Icon-beside-heading pattern (section headings on Mailing List, About). */
+.section-heading-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.heading-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  color: var(--color-accent);
+}
+
+.heading-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
 .divider {
   border: none;
   border-top: 1px solid var(--color-border);

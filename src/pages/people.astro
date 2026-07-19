@@ -2,6 +2,7 @@
 import yaml from "js-yaml";
 import rawYaml from "../data/people.yaml?raw";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { PEOPLE_ILLUSTRATION } from "../lib/icons";
 
 interface Person {
   name: string;
@@ -29,12 +30,15 @@ const issueUrl =
 
 <BaseLayout title="People" description="IENN's active members, grouped by node.">
   <section class="section page-header-section">
-    <div class="container">
-      <p class="eyebrow">People</p>
-      <h1>People</h1>
-      <p class="section-intro" style="margin-left:0;">
-        IENN's active members, grouped by node.
-      </p>
+    <div class="container hero-row">
+      <div class="hero-text">
+        <p class="eyebrow">People</p>
+        <h1>People</h1>
+        <p class="section-intro" style="margin-left:0;">
+          IENN's active members, grouped by node.
+        </p>
+      </div>
+      <div class="hero-illustration" aria-hidden="true" set:html={PEOPLE_ILLUSTRATION} />
     </div>
   </section>
 

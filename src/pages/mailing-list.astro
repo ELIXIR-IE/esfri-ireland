@@ -6,6 +6,7 @@ const listservAddress = "LISTSERV@LISTSERV.HEANET.IE";
 const listName = "ESFRI-IRELAND";
 const listAddress = "esfri-ireland@listserv.heanet.ie";
 const supportEmail = "gavin.farrell@ul.ie";
+const supportEmail2 = "joan.y.murphy@tcd.ie";
 const subscribeBody = `SUBSCRIBE ${listName} Your Full Name`;
 const subscribeMailto = `mailto:${listservAddress}?body=${encodeURIComponent(subscribeBody)}`;
 const heanetPageUrl = `https://listserv.heanet.ie/cgi-bin/wa?A0=${listName}`;
@@ -71,7 +72,7 @@ const heanetPageUrl = `https://listserv.heanet.ie/cgi-bin/wa?A0=${listName}`;
     <div class="container">
       <h2 class="section-heading-icon"><span class="heading-icon" set:html={ICONS.headset} />Support</h2>
       <p>
-        Questions about the list or IENN more generally can be sent to <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
+        Questions about the list or IENN more generally can be sent to <a href={`mailto:${supportEmail}`}>{supportEmail}</a> or <a href={`mailto:${supportEmail2}`}>{supportEmail2}</a>.
       </p>
     </div>
   </section>
@@ -86,25 +87,6 @@ const heanetPageUrl = `https://listserv.heanet.ie/cgi-bin/wa?A0=${listName}`;
       font-size: 0.95rem;
       overflow-x: auto;
       margin-bottom: var(--space-4);
-    }
-
-    .section-heading-icon {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-
-    .heading-icon {
-      display: inline-flex;
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      color: var(--color-accent);
-    }
-
-    .heading-icon svg {
-      width: 100%;
-      height: 100%;
     }
   </style>
 </BaseLayout>

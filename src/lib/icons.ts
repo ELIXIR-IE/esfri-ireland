@@ -66,3 +66,75 @@ export const NETWORK_ILLUSTRATION = `<svg viewBox="0 0 320 280" xmlns="http://ww
   <circle cx="250" cy="70" r="10" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" />
   <circle cx="230" cy="160" r="16" fill="var(--color-accent)" />
 </svg>`;
+
+// Publications hero — a stack of report/paper shapes with a "verified"
+// checkmark badge.
+export const DOCUMENT_ILLUSTRATION = `<svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" role="presentation">
+  <circle cx="240" cy="70" r="55" fill="var(--color-green-500)" opacity="0.12" />
+  <circle cx="60" cy="210" r="40" fill="var(--color-accent)" opacity="0.10" />
+  <rect x="110" y="70" width="120" height="150" rx="10" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" transform="rotate(-8 170 145)" />
+  <rect x="100" y="60" width="120" height="150" rx="10" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" transform="rotate(4 160 135)" />
+  <rect x="95" y="55" width="130" height="160" rx="10" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" />
+  <g stroke="var(--color-green-700)" stroke-width="2" stroke-linecap="round">
+    <line x1="115" y1="85" x2="205" y2="85" />
+    <line x1="115" y1="103" x2="205" y2="103" />
+    <line x1="115" y1="121" x2="180" y2="121" />
+  </g>
+  <circle cx="205" cy="170" r="16" fill="var(--color-accent)" />
+  <path d="M198 170l5 5 10-10" stroke="var(--color-surface)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+</svg>`;
+
+// News hero — a news card with headline/body lines and a broadcast signal.
+export const NEWS_ILLUSTRATION = `<svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" role="presentation">
+  <circle cx="70" cy="60" r="50" fill="var(--color-green-500)" opacity="0.12" />
+  <circle cx="260" cy="220" r="42" fill="var(--color-accent)" opacity="0.10" />
+  <rect x="80" y="60" width="160" height="140" rx="14" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" />
+  <rect x="100" y="80" width="60" height="40" rx="6" fill="var(--color-green-500)" opacity="0.25" />
+  <g stroke="var(--color-green-700)" stroke-width="2" stroke-linecap="round">
+    <line x1="170" y1="88" x2="220" y2="88" />
+    <line x1="170" y1="102" x2="220" y2="102" />
+    <line x1="100" y1="135" x2="220" y2="135" />
+    <line x1="100" y1="150" x2="220" y2="150" />
+    <line x1="100" y1="165" x2="180" y2="165" />
+  </g>
+  <g stroke="var(--color-accent)" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M225 55c8 0 15 7 15 15" />
+    <path d="M225 42c15 0 28 13 28 28" />
+  </g>
+  <circle cx="222" cy="72" r="4" fill="var(--color-accent)" />
+</svg>`;
+
+// Events hero — a calendar grid with one date cell highlighted.
+export const EVENT_ILLUSTRATION = `<svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" role="presentation">
+  <circle cx="250" cy="70" r="55" fill="var(--color-green-500)" opacity="0.12" />
+  <circle cx="60" cy="215" r="40" fill="var(--color-accent)" opacity="0.10" />
+  <rect x="90" y="70" width="150" height="130" rx="12" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" />
+  <line x1="90" y1="105" x2="240" y2="105" stroke="var(--color-green-700)" stroke-width="2" />
+  <line x1="120" y1="55" x2="120" y2="85" stroke="var(--color-green-700)" stroke-width="2" stroke-linecap="round" />
+  <line x1="210" y1="55" x2="210" y2="85" stroke="var(--color-green-700)" stroke-width="2" stroke-linecap="round" />
+  <g fill="var(--color-green-500)" opacity="0.35">
+    <rect x="110" y="120" width="24" height="20" rx="4" />
+    <rect x="146" y="120" width="24" height="20" rx="4" />
+    <rect x="182" y="120" width="24" height="20" rx="4" />
+    <rect x="110" y="150" width="24" height="20" rx="4" />
+  </g>
+  <rect x="146" y="150" width="24" height="20" rx="4" fill="var(--color-accent)" />
+</svg>`;
+
+// People hero — a hub-and-spoke cluster of connected circles, a distinct
+// composition from the Home network graphic (central hub, not a chain).
+export const PEOPLE_ILLUSTRATION = `<svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" role="presentation">
+  <circle cx="230" cy="90" r="55" fill="var(--color-accent)" opacity="0.10" />
+  <circle cx="80" cy="200" r="45" fill="var(--color-green-500)" opacity="0.12" />
+  <g stroke="var(--color-green-700)" stroke-width="2" fill="none" stroke-linecap="round">
+    <line x1="160" y1="140" x2="120" y2="90" />
+    <line x1="160" y1="140" x2="210" y2="95" />
+    <line x1="160" y1="140" x2="150" y2="200" />
+    <line x1="160" y1="140" x2="220" y2="180" />
+  </g>
+  <circle cx="160" cy="140" r="20" fill="var(--color-accent)" />
+  <circle cx="120" cy="90" r="14" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" />
+  <circle cx="210" cy="95" r="14" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" />
+  <circle cx="150" cy="200" r="14" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" />
+  <circle cx="220" cy="180" r="14" fill="var(--color-surface)" stroke="var(--color-green-700)" stroke-width="2" />
+</svg>`;
