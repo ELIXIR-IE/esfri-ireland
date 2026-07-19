@@ -80,8 +80,11 @@ function isActive(href: string) {
           Suggest an update
         </a>
       </div>
+      <div class="container footer-disclaimer">
+        <p>IENN is a grassroots coordination network of Irish ESFRI nodes. It is not an official, top-down government body, nor is it formally endorsed by the European Strategy Forum on Research Infrastructures (ESFRI).</p>
+      </div>
       <div class="container footer-bottom">
-        <span>&copy; {new Date().getFullYear()} Irish ESFRI Node Network (IENN).</span>
+        <span>&copy; {new Date().getFullYear()} IENN.</span>
       </div>
     </footer>
 
@@ -289,7 +292,7 @@ function isActive(href: string) {
         align-items: center;
         text-align: center;
         gap: var(--space-4);
-        padding: var(--space-6) var(--space-5) var(--space-5);
+        padding: var(--space-6) var(--space-5) var(--space-3);
       }
 
       .footer-github {
@@ -306,6 +309,20 @@ function isActive(href: string) {
       .footer-github:hover {
         background: rgba(255, 255, 255, 0.08);
         text-decoration: none;
+      }
+
+      .footer-disclaimer {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 var(--space-5) var(--space-5);
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.5;
+      }
+
+      .footer-disclaimer p {
+        margin: 0;
       }
 
       .footer-bottom {
