@@ -86,7 +86,7 @@
   name: CESSDA-ERIC
   full_name: Consortium of European Social Science Data Archives
   description: Provides a platform for social science data archives across Europe.
-  domain: Social & Cultural Innovation
+  domain: Social Sciences
   eosc_cluster: SSHOC
   ireland_status: Member (via ISSDA)
   tier: engaged
@@ -104,7 +104,7 @@
   name: CLARIN-ERIC
   full_name: Common Language Resources and Technology Infrastructure
   description: Provides access to digital language data and tools for research in SSH.
-  domain: Social & Cultural Innovation
+  domain: Digital Arts & Humanities
   eosc_cluster: SSHOC
   ireland_status: Not a member
   tier: not_member
@@ -149,7 +149,7 @@
   name: DARIAH-ERIC
   full_name: Digital Research Infrastructure for the Arts and Humanities
   description: Supports digitally-enabled research in the arts and humanities.
-  domain: Social & Cultural Innovation
+  domain: Digital Arts & Humanities
   eosc_cluster: SSHOC
   ireland_status: Member (via DARIAH-IE)
   tier: engaged
@@ -227,7 +227,7 @@
   name: EHRI
   full_name: European Holocaust Research Infrastructure
   description: Provides access to dispersed archives and data related to the Holocaust.
-  domain: Social & Cultural Innovation
+  domain: Digital Arts & Humanities
   eosc_cluster: SSHOC
   ireland_status: Not a member
   tier: not_member
@@ -425,7 +425,7 @@
   name: ESS
   full_name: European Social Survey
   description: A cross-national survey collecting data on attitudes, beliefs and behaviour patterns in Europe.
-  domain: Social & Cultural Innovation
+  domain: Social Sciences
   eosc_cluster: SSHOC
   ireland_status: Member
   tier: to_be_onboarded
@@ -620,7 +620,7 @@
   name: GGP
   full_name: Generations and Gender Programme
   description: A social science RI for data on population and family dynamics.
-  domain: Social & Cultural Innovation
+  domain: Social Sciences
   eosc_cluster: SSHOC
   ireland_status: Not a member
   tier: not_member
@@ -635,7 +635,7 @@
   name: GUIDE
   full_name: Growing Up in Digital Europe
   description: Europe's first comparative birth cohort survey, studying child well-being across Europe.
-  domain: Social & Cultural Innovation
+  domain: Social Sciences
   eosc_cluster: SSHOC
   ireland_status: Member, Co-coordinated by Ireland (UCD)
   tier: to_be_onboarded
@@ -830,7 +830,7 @@
   name: OPERAS
   full_name: OPen scholarly communication in the European Research Area for Social Sciences and Humanities
   description: A distributed RI for open scholarly communication in the social sciences and humanities.
-  domain: Social & Cultural Innovation
+  domain: Digital Arts & Humanities
   eosc_cluster: SSHOC
   ireland_status: Not a member
   tier: not_member
@@ -860,7 +860,7 @@
   name: RESILIENCE
   full_name: "REligious Studies Infrastructure: tooLs, Innovation, Experts, conNections and Centres in Europe"
   description: Supports all fields of religious studies through access to physical and digital resources.
-  domain: Social & Cultural Innovation
+  domain: Digital Arts & Humanities
   eosc_cluster: SSHOC
   ireland_status: Not a member
   tier: not_member
@@ -875,7 +875,7 @@
   name: SHARE-ERIC
   full_name: Survey of Health, Ageing and Retirement in Europe
   description: A multidisciplinary and cross-national panel database on health, socio-economic status and social and family networks.
-  domain: Social & Cultural Innovation
+  domain: Social Sciences
   eosc_cluster: SSHOC
   ireland_status: Not a member
   tier: not_member
@@ -905,7 +905,7 @@
   name: SoBigData++
   full_name: Social Mining & Big Data Ecosystem
   description: A research infrastructure for data science and social mining.
-  domain: Data, Computing & Social Sciences
+  domain: Data, Computing & Digital RIs
   eosc_cluster: SSHOC
   ireland_status: Not a member
   tier: not_member
