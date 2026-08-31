@@ -39,12 +39,19 @@
   institute: UG
   role: Deputy lead - Deputy Head of Node
 
+- name: Jennifer Edmond
+  email: EDMONDJ@tcd.ie
+  esfri: DARIAH-IE
+  domain: Digital Humanities
+  institute: TCD
+  role: National Coordinator
+
 - name: Joan Murphy
   email: joan.y.murphy@tcd.ie
   esfri: DARIAH-IE
   domain: Digital Humanities
   institute: TCD
-  role: Lead
+  role: National Manager
 
 - name: Arlene Healy
   email: arlene.healy@ucd.ie
